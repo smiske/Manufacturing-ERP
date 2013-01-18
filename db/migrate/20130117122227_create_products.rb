@@ -5,8 +5,8 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :product_code
       t.string :product_name
       t.boolean :product_type
-      t.floate :tax
-      t.floate :rate
+      t.float :tax
+      t.float :rate
 
       t.timestamps
     end

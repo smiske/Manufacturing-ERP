@@ -1,33 +1,32 @@
-<%= form_for(@transaction) do |f| %>
-  <% if @transaction.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
-
-      <ul>
-      <% @transaction.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @transaction, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :bank_transaction_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :bank_transaction_id, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :total, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :total, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :total_refund, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :total_refund, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :product_transaction_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :product_transaction_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :bank_transaction_id %><br />
-    <%= f.number_field :bank_transaction_id %>
-  </div>
-  <div class="field">
-    <%= f.label :total %><br />
-    <%= f.text_field :total %>
-  </div>
-  <div class="field">
-    <%= f.label :total_refund %><br />
-    <%= f.text_field :total_refund %>
-  </div>
-  <div class="field">
-    <%= f.label :product_transaction_id %><br />
-    <%= f.number_field :product_transaction_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                transactions_path, :class => 'btn' %>
   </div>
 <% end %>

@@ -1,29 +1,26 @@
-<%= form_for(@bank_transaction) do |f| %>
-  <% if @bank_transaction.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bank_transaction.errors.count, "error") %> prohibited this bank_transaction from being saved:</h2>
-
-      <ul>
-      <% @bank_transaction.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @bank_transaction, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :type, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :micor_code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :micor_code, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bank_account_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :bank_account_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :micor_code %><br />
-    <%= f.number_field :micor_code %>
-  </div>
-  <div class="field">
-    <%= f.label :bank_account_id %><br />
-    <%= f.number_field :bank_account_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                bank_transactions_path, :class => 'btn' %>
   </div>
 <% end %>

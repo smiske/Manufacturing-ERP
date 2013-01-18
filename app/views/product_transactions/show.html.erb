@@ -1,30 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = ProductTransaction -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Delivary type:</b>
-  <%= @product_transaction.delivary_type %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:delivary_type) %>:</strong></dt>
+  <dd><%= @product_transaction.delivary_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:delivary_challan) %>:</strong></dt>
+  <dd><%= @product_transaction.delivary_challan %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tax_invoice_id) %>:</strong></dt>
+  <dd><%= @product_transaction.tax_invoice_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tax) %>:</strong></dt>
+  <dd><%= @product_transaction.tax %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:transaction_id) %>:</strong></dt>
+  <dd><%= @product_transaction.transaction_id %></dd>
+</dl>
 
-<p>
-  <b>Delivary challan:</b>
-  <%= @product_transaction.delivary_challan %>
-</p>
-
-<p>
-  <b>Tax invoice:</b>
-  <%= @product_transaction.tax_invoice_id %>
-</p>
-
-<p>
-  <b>Tax:</b>
-  <%= @product_transaction.tax %>
-</p>
-
-<p>
-  <b>Transaction:</b>
-  <%= @product_transaction.transaction_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_transaction_path(@product_transaction) %> |
-<%= link_to 'Back', product_transactions_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              product_transactions_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_product_transaction_path(@product_transaction), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              product_transaction_path(@product_transaction),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

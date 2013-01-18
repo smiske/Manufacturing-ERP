@@ -1,37 +1,38 @@
-<%= form_for(@product_transaction) do |f| %>
-  <% if @product_transaction.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product_transaction.errors.count, "error") %> prohibited this product_transaction from being saved:</h2>
-
-      <ul>
-      <% @product_transaction.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @product_transaction, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :delivary_type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :delivary_type, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :delivary_challan, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :delivary_challan, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tax_invoice_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :tax_invoice_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tax, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tax, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :transaction_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :transaction_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :delivary_type %><br />
-    <%= f.text_field :delivary_type %>
-  </div>
-  <div class="field">
-    <%= f.label :delivary_challan %><br />
-    <%= f.number_field :delivary_challan %>
-  </div>
-  <div class="field">
-    <%= f.label :tax_invoice_id %><br />
-    <%= f.number_field :tax_invoice_id %>
-  </div>
-  <div class="field">
-    <%= f.label :tax %><br />
-    <%= f.text_field :tax %>
-  </div>
-  <div class="field">
-    <%= f.label :transaction_id %><br />
-    <%= f.number_field :transaction_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                product_transactions_path, :class => 'btn' %>
   </div>
 <% end %>

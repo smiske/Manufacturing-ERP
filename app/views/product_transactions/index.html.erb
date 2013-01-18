@@ -1,31 +1,44 @@
-<h1>Listing product_transactions</h1>
-
-<table>
-  <tr>
-    <th>Delivary type</th>
-    <th>Delivary challan</th>
-    <th>Tax invoice</th>
-    <th>Tax</th>
-    <th>Transaction</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @product_transactions.each do |product_transaction| %>
-  <tr>
-    <td><%= product_transaction.delivary_type %></td>
-    <td><%= product_transaction.delivary_challan %></td>
-    <td><%= product_transaction.tax_invoice_id %></td>
-    <td><%= product_transaction.tax %></td>
-    <td><%= product_transaction.transaction_id %></td>
-    <td><%= link_to 'Show', product_transaction %></td>
-    <td><%= link_to 'Edit', edit_product_transaction_path(product_transaction) %></td>
-    <td><%= link_to 'Destroy', product_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = ProductTransaction -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:delivary_type) %></th>
+      <th><%= model_class.human_attribute_name(:delivary_challan) %></th>
+      <th><%= model_class.human_attribute_name(:tax_invoice_id) %></th>
+      <th><%= model_class.human_attribute_name(:tax) %></th>
+      <th><%= model_class.human_attribute_name(:transaction_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product_transactions.each do |product_transaction| %>
+      <tr>
+        <td><%= link_to product_transaction.id, product_transaction_path(product_transaction) %></td>
+        <td><%= product_transaction.delivary_type %></td>
+        <td><%= product_transaction.delivary_challan %></td>
+        <td><%= product_transaction.tax_invoice_id %></td>
+        <td><%= product_transaction.tax %></td>
+        <td><%= product_transaction.transaction_id %></td>
+        <td><%=l product_transaction.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_product_transaction_path(product_transaction), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      product_transaction_path(product_transaction),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Product transaction', new_product_transaction_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_product_transaction_path,
+            :class => 'btn btn-primary' %>

@@ -1,40 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = BankAccount -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Bank name:</b>
-  <%= @bank_account.bank_name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:bank_name) %>:</strong></dt>
+  <dd><%= @bank_account.bank_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:account_number) %>:</strong></dt>
+  <dd><%= @bank_account.account_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:branch_add) %>:</strong></dt>
+  <dd><%= @bank_account.branch_add %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ifsc_code) %>:</strong></dt>
+  <dd><%= @bank_account.ifsc_code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contact_number) %>:</strong></dt>
+  <dd><%= @bank_account.contact_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:branch_manager_contact_no) %>:</strong></dt>
+  <dd><%= @bank_account.branch_manager_contact_no %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:balance) %>:</strong></dt>
+  <dd><%= @bank_account.balance %></dd>
+</dl>
 
-<p>
-  <b>Account number:</b>
-  <%= @bank_account.account_number %>
-</p>
-
-<p>
-  <b>Branch add:</b>
-  <%= @bank_account.branch_add %>
-</p>
-
-<p>
-  <b>Ifsc code:</b>
-  <%= @bank_account.ifsc_code %>
-</p>
-
-<p>
-  <b>Contact number:</b>
-  <%= @bank_account.contact_number %>
-</p>
-
-<p>
-  <b>Branch manager contact no:</b>
-  <%= @bank_account.branch_manager_contact_no %>
-</p>
-
-<p>
-  <b>Balance:</b>
-  <%= @bank_account.balance %>
-</p>
-
-
-<%= link_to 'Edit', edit_bank_account_path(@bank_account) %> |
-<%= link_to 'Back', bank_accounts_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              bank_accounts_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_bank_account_path(@bank_account), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              bank_account_path(@bank_account),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -6,8 +6,8 @@ class CreateTaxInvoices < ActiveRecord::Migration
       t.datetime :due_date
       t.string :product_name
       t.string :invoice_type
-      t.floate :labour_charges
-      t.floate :amount
+      t.float :labour_charges
+      t.float :amount
       t.integer :total_requirement
 
       t.timestamps

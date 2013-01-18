@@ -1,45 +1,35 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = TaxInvoice -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Invoice number:</b>
-  <%= @tax_invoice.invoice_number %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:invoice_number) %>:</strong></dt>
+  <dd><%= @tax_invoice.invoice_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:invoice_date) %>:</strong></dt>
+  <dd><%= @tax_invoice.invoice_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:due_date) %>:</strong></dt>
+  <dd><%= @tax_invoice.due_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:product_name) %>:</strong></dt>
+  <dd><%= @tax_invoice.product_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:invoice_type) %>:</strong></dt>
+  <dd><%= @tax_invoice.invoice_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:labour_charges) %>:</strong></dt>
+  <dd><%= @tax_invoice.labour_charges %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
+  <dd><%= @tax_invoice.amount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:total_requirement) %>:</strong></dt>
+  <dd><%= @tax_invoice.total_requirement %></dd>
+</dl>
 
-<p>
-  <b>Invoice date:</b>
-  <%= @tax_invoice.invoice_date %>
-</p>
-
-<p>
-  <b>Due date:</b>
-  <%= @tax_invoice.due_date %>
-</p>
-
-<p>
-  <b>Product name:</b>
-  <%= @tax_invoice.product_name %>
-</p>
-
-<p>
-  <b>Invoice type:</b>
-  <%= @tax_invoice.invoice_type %>
-</p>
-
-<p>
-  <b>Labour charges:</b>
-  <%= @tax_invoice.labour_charges %>
-</p>
-
-<p>
-  <b>Amount:</b>
-  <%= @tax_invoice.amount %>
-</p>
-
-<p>
-  <b>Total requirement:</b>
-  <%= @tax_invoice.total_requirement %>
-</p>
-
-
-<%= link_to 'Edit', edit_tax_invoice_path(@tax_invoice) %> |
-<%= link_to 'Back', tax_invoices_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              tax_invoices_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_tax_invoice_path(@tax_invoice), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              tax_invoice_path(@tax_invoice),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

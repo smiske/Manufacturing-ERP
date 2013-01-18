@@ -1,37 +1,50 @@
-<h1>Listing tax_invoices</h1>
-
-<table>
-  <tr>
-    <th>Invoice number</th>
-    <th>Invoice date</th>
-    <th>Due date</th>
-    <th>Product name</th>
-    <th>Invoice type</th>
-    <th>Labour charges</th>
-    <th>Amount</th>
-    <th>Total requirement</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tax_invoices.each do |tax_invoice| %>
-  <tr>
-    <td><%= tax_invoice.invoice_number %></td>
-    <td><%= tax_invoice.invoice_date %></td>
-    <td><%= tax_invoice.due_date %></td>
-    <td><%= tax_invoice.product_name %></td>
-    <td><%= tax_invoice.invoice_type %></td>
-    <td><%= tax_invoice.labour_charges %></td>
-    <td><%= tax_invoice.amount %></td>
-    <td><%= tax_invoice.total_requirement %></td>
-    <td><%= link_to 'Show', tax_invoice %></td>
-    <td><%= link_to 'Edit', edit_tax_invoice_path(tax_invoice) %></td>
-    <td><%= link_to 'Destroy', tax_invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = TaxInvoice -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:invoice_number) %></th>
+      <th><%= model_class.human_attribute_name(:invoice_date) %></th>
+      <th><%= model_class.human_attribute_name(:due_date) %></th>
+      <th><%= model_class.human_attribute_name(:product_name) %></th>
+      <th><%= model_class.human_attribute_name(:invoice_type) %></th>
+      <th><%= model_class.human_attribute_name(:labour_charges) %></th>
+      <th><%= model_class.human_attribute_name(:amount) %></th>
+      <th><%= model_class.human_attribute_name(:total_requirement) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tax_invoices.each do |tax_invoice| %>
+      <tr>
+        <td><%= link_to tax_invoice.id, tax_invoice_path(tax_invoice) %></td>
+        <td><%= tax_invoice.invoice_number %></td>
+        <td><%= tax_invoice.invoice_date %></td>
+        <td><%= tax_invoice.due_date %></td>
+        <td><%= tax_invoice.product_name %></td>
+        <td><%= tax_invoice.invoice_type %></td>
+        <td><%= tax_invoice.labour_charges %></td>
+        <td><%= tax_invoice.amount %></td>
+        <td><%= tax_invoice.total_requirement %></td>
+        <td><%=l tax_invoice.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_tax_invoice_path(tax_invoice), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      tax_invoice_path(tax_invoice),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Tax invoice', new_tax_invoice_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_tax_invoice_path,
+            :class => 'btn btn-primary' %>

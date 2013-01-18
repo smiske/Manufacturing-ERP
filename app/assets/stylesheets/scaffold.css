@@ -54,3 +54,11 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+.row {
+    margin-top: 40px;
+}
+
+.field {
+    display: in;
+}
