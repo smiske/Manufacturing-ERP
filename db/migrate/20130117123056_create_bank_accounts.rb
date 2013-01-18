@@ -4,10 +4,10 @@ class CreateBankAccounts < ActiveRecord::Migration
       t.string :bank_name
       t.string :account_number
       t.string :branch_add
-      t.integer :ifsc_code
+      t.string :ifsc_code
       t.integer :contact_number
       t.integer :branch_manager_contact_no
-      t.integer :balance
+      t.float :balance
 
       t.timestamps
     end
