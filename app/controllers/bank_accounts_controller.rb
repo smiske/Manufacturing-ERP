@@ -1,6 +1,7 @@
 class BankAccountsController < ApplicationController
   # GET /bank_accounts
   # GET /bank_accounts.json
+  before_filter :authenticate_user!
   def index
     @bank_accounts = BankAccount.all
 

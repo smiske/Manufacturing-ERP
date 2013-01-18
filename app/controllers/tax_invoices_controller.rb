@@ -1,6 +1,7 @@
 class TaxInvoicesController < ApplicationController
   # GET /tax_invoices
   # GET /tax_invoices.json
+  before_filter :authenticate_user!
   def index
     @tax_invoices = TaxInvoice.all
 

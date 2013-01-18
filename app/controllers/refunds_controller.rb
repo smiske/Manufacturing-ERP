@@ -1,6 +1,7 @@
 class RefundsController < ApplicationController
   # GET /refunds
   # GET /refunds.json
+  before_filter :authenticate_user!
   def index
     @refunds = Refund.all
 

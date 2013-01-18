@@ -1,6 +1,7 @@
 class ProductTransactionsController < ApplicationController
   # GET /product_transactions
   # GET /product_transactions.json
+  before_filter :authenticate_user!
   def index
     @product_transactions = ProductTransaction.all
 
