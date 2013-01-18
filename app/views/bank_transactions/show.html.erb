@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @bank_transaction.type %>
+</p>
+
+<p>
+  <b>Micor code:</b>
+  <%= @bank_transaction.micor_code %>
+</p>
+
+<p>
+  <b>Bank account:</b>
+  <%= @bank_transaction.bank_account_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_bank_transaction_path(@bank_transaction) %> |
+<%= link_to 'Back', bank_transactions_path %>

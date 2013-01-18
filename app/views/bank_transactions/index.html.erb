@@ -1,0 +1,27 @@
+<h1>Listing bank_transactions</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Micor code</th>
+    <th>Bank account</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bank_transactions.each do |bank_transaction| %>
+  <tr>
+    <td><%= bank_transaction.type %></td>
+    <td><%= bank_transaction.micor_code %></td>
+    <td><%= bank_transaction.bank_account_id %></td>
+    <td><%= link_to 'Show', bank_transaction %></td>
+    <td><%= link_to 'Edit', edit_bank_transaction_path(bank_transaction) %></td>
+    <td><%= link_to 'Destroy', bank_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bank transaction', new_bank_transaction_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  delivary_type: MyString
+  delivary_challan: 1
+  tax_invoice_id: 1
+  tax: 
+  transaction_id: 1
+
+two:
+  delivary_type: MyString
+  delivary_challan: 1
+  tax_invoice_id: 1
+  tax: 
+  transaction_id: 1

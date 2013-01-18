@@ -1,0 +1,31 @@
+<h1>Listing product_transactions</h1>
+
+<table>
+  <tr>
+    <th>Delivary type</th>
+    <th>Delivary challan</th>
+    <th>Tax invoice</th>
+    <th>Tax</th>
+    <th>Transaction</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @product_transactions.each do |product_transaction| %>
+  <tr>
+    <td><%= product_transaction.delivary_type %></td>
+    <td><%= product_transaction.delivary_challan %></td>
+    <td><%= product_transaction.tax_invoice_id %></td>
+    <td><%= product_transaction.tax %></td>
+    <td><%= product_transaction.transaction_id %></td>
+    <td><%= link_to 'Show', product_transaction %></td>
+    <td><%= link_to 'Edit', edit_product_transaction_path(product_transaction) %></td>
+    <td><%= link_to 'Destroy', product_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product transaction', new_product_transaction_path %>

@@ -1,0 +1,35 @@
+<h1>Listing bank_accounts</h1>
+
+<table>
+  <tr>
+    <th>Bank name</th>
+    <th>Account number</th>
+    <th>Branch add</th>
+    <th>Ifsc code</th>
+    <th>Contact number</th>
+    <th>Branch manager contact no</th>
+    <th>Balance</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bank_accounts.each do |bank_account| %>
+  <tr>
+    <td><%= bank_account.bank_name %></td>
+    <td><%= bank_account.account_number %></td>
+    <td><%= bank_account.branch_add %></td>
+    <td><%= bank_account.ifsc_code %></td>
+    <td><%= bank_account.contact_number %></td>
+    <td><%= bank_account.branch_manager_contact_no %></td>
+    <td><%= bank_account.balance %></td>
+    <td><%= link_to 'Show', bank_account %></td>
+    <td><%= link_to 'Edit', edit_bank_account_path(bank_account) %></td>
+    <td><%= link_to 'Destroy', bank_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bank account', new_bank_account_path %>

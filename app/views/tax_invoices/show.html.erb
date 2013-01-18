@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Invoice number:</b>
+  <%= @tax_invoice.invoice_number %>
+</p>
+
+<p>
+  <b>Invoice date:</b>
+  <%= @tax_invoice.invoice_date %>
+</p>
+
+<p>
+  <b>Due date:</b>
+  <%= @tax_invoice.due_date %>
+</p>
+
+<p>
+  <b>Product name:</b>
+  <%= @tax_invoice.product_name %>
+</p>
+
+<p>
+  <b>Invoice type:</b>
+  <%= @tax_invoice.invoice_type %>
+</p>
+
+<p>
+  <b>Labour charges:</b>
+  <%= @tax_invoice.labour_charges %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @tax_invoice.amount %>
+</p>
+
+<p>
+  <b>Total requirement:</b>
+  <%= @tax_invoice.total_requirement %>
+</p>
+
+
+<%= link_to 'Edit', edit_tax_invoice_path(@tax_invoice) %> |
+<%= link_to 'Back', tax_invoices_path %>

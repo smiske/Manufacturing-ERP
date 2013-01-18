@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  invoice_number: 1
+  invoice_date: 2013-01-17 17:57:32
+  due_date: 2013-01-17 17:57:32
+  product_name: MyString
+  invoice_type: MyString
+  labour_charges: 
+  amount: 
+  total_requirement: 1
+
+two:
+  invoice_number: 1
+  invoice_date: 2013-01-17 17:57:32
+  due_date: 2013-01-17 17:57:32
+  product_name: MyString
+  invoice_type: MyString
+  labour_charges: 
+  amount: 
+  total_requirement: 1

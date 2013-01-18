@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bank name:</b>
+  <%= @bank_account.bank_name %>
+</p>
+
+<p>
+  <b>Account number:</b>
+  <%= @bank_account.account_number %>
+</p>
+
+<p>
+  <b>Branch add:</b>
+  <%= @bank_account.branch_add %>
+</p>
+
+<p>
+  <b>Ifsc code:</b>
+  <%= @bank_account.ifsc_code %>
+</p>
+
+<p>
+  <b>Contact number:</b>
+  <%= @bank_account.contact_number %>
+</p>
+
+<p>
+  <b>Branch manager contact no:</b>
+  <%= @bank_account.branch_manager_contact_no %>
+</p>
+
+<p>
+  <b>Balance:</b>
+  <%= @bank_account.balance %>
+</p>
+
+
+<%= link_to 'Edit', edit_bank_account_path(@bank_account) %> |
+<%= link_to 'Back', bank_accounts_path %>

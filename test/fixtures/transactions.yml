@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bank_transaction_id: 1
+  total: 
+  total_refund: 
+  product_transaction_id: 1
+
+two:
+  bank_transaction_id: 1
+  total: 
+  total_refund: 
+  product_transaction_id: 1

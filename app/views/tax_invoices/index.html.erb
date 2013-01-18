@@ -1,0 +1,37 @@
+<h1>Listing tax_invoices</h1>
+
+<table>
+  <tr>
+    <th>Invoice number</th>
+    <th>Invoice date</th>
+    <th>Due date</th>
+    <th>Product name</th>
+    <th>Invoice type</th>
+    <th>Labour charges</th>
+    <th>Amount</th>
+    <th>Total requirement</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tax_invoices.each do |tax_invoice| %>
+  <tr>
+    <td><%= tax_invoice.invoice_number %></td>
+    <td><%= tax_invoice.invoice_date %></td>
+    <td><%= tax_invoice.due_date %></td>
+    <td><%= tax_invoice.product_name %></td>
+    <td><%= tax_invoice.invoice_type %></td>
+    <td><%= tax_invoice.labour_charges %></td>
+    <td><%= tax_invoice.amount %></td>
+    <td><%= tax_invoice.total_requirement %></td>
+    <td><%= link_to 'Show', tax_invoice %></td>
+    <td><%= link_to 'Edit', edit_tax_invoice_path(tax_invoice) %></td>
+    <td><%= link_to 'Destroy', tax_invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tax invoice', new_tax_invoice_path %>

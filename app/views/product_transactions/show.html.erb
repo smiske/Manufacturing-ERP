@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Delivary type:</b>
+  <%= @product_transaction.delivary_type %>
+</p>
+
+<p>
+  <b>Delivary challan:</b>
+  <%= @product_transaction.delivary_challan %>
+</p>
+
+<p>
+  <b>Tax invoice:</b>
+  <%= @product_transaction.tax_invoice_id %>
+</p>
+
+<p>
+  <b>Tax:</b>
+  <%= @product_transaction.tax %>
+</p>
+
+<p>
+  <b>Transaction:</b>
+  <%= @product_transaction.transaction_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_transaction_path(@product_transaction) %> |
+<%= link_to 'Back', product_transactions_path %>

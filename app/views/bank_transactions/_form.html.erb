@@ -1,0 +1,29 @@
+<%= form_for(@bank_transaction) do |f| %>
+  <% if @bank_transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bank_transaction.errors.count, "error") %> prohibited this bank_transaction from being saved:</h2>
+
+      <ul>
+      <% @bank_transaction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :micor_code %><br />
+    <%= f.number_field :micor_code %>
+  </div>
+  <div class="field">
+    <%= f.label :bank_account_id %><br />
+    <%= f.number_field :bank_account_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

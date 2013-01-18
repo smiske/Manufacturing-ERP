@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product_number: 1
+  product_code: 1
+  product_name: MyString
+  product_type: false
+  tax: 
+  rate: 
+
+two:
+  product_number: 1
+  product_code: 1
+  product_name: MyString
+  product_type: false
+  tax: 
+  rate: 
