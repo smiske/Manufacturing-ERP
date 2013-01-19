@@ -7,4 +7,6 @@ class TaxInvoice < ActiveRecord::Base
   validates :labour_charges, :presence => true
   validates :product_name, :presence => true
   validates :total_requirement, :presence => true
+
+  has_one :product
 end

@@ -8,7 +8,8 @@
   <div class="control-group">
     <%= f.label :product_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :product_id, :class => 'number_field' %>
+
+      <%= f.select :product_id, options_for_select(@product.map{|d|[d.product_name, d.id] }),{ :include_blank => true }, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">

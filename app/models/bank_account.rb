@@ -10,4 +10,8 @@ class BankAccount < ActiveRecord::Base
   validates :ifsc_code, :presence => true
 
 
+  belongs_to :user
+  has_many :bank_transactions
+
+
 end

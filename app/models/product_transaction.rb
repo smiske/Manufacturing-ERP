@@ -6,4 +6,9 @@ class ProductTransaction < ActiveRecord::Base
   validates :tax, :presence => true
   validates :tax_invoice_id, :presence => true
   validates :transaction_id, :presence => true
+
+  belongs_to :product
+
+  has_many :transactions
+  has_many :refunds
 end
