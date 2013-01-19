@@ -17,17 +17,17 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
     t.string   "bank_name"
     t.string   "account_number"
     t.string   "branch_add"
-    t.integer  "ifsc_code"
+    t.string   "ifsc_code"
     t.integer  "contact_number"
     t.integer  "branch_manager_contact_no"
-    t.integer  "balance"
+    t.float    "balance"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
 
   create_table "bank_transactions", :force => true do |t|
     t.string   "type"
-    t.integer  "micor_code"
+    t.string   "micor_code"
     t.integer  "bank_account_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
   end
 
   create_table "products", :force => true do |t|
-    t.integer  "product_number"
-    t.integer  "product_code"
+    t.string   "product_number"
+    t.string   "product_code"
     t.string   "product_name"
-    t.boolean  "product_type"
+    t.string   "product_type"
     t.float    "tax"
     t.float    "rate"
     t.datetime "created_at",     :null => false
