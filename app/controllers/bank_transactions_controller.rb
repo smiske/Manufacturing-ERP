@@ -27,6 +27,10 @@ class BankTransactionsController < ApplicationController
   def new
     @bank_transaction = BankTransaction.new
 
+
+    @bank_accounts = BankAccount.all
+
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bank_transaction }

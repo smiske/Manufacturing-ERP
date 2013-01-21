@@ -2,7 +2,7 @@
   <div class="control-group">
     <%= f.label :type, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :type, :class => 'text_field' %>
+      <%= f.text_field :transaction_type, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -14,7 +14,8 @@
   <div class="control-group">
     <%= f.label :bank_account_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :bank_account_id, :class => 'number_field' %>
+      <%= f.select :bank_account_id, options_for_select(@bank_accounts.map{|d| ["#{d.bank_name} - #{d.account_number}", d.id] }),{ :include_blank => true }, :class => 'number_field' %>
+
     </div>
   </div>
 

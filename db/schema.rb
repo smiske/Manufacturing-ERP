@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
   end
 
   create_table "bank_transactions", :force => true do |t|
-    t.string   "type"
+    t.string   "transaction_type"
     t.string   "micor_code"
     t.integer  "bank_account_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "orders", :force => true do |t|
