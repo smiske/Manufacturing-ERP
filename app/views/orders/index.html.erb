@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:PO_number) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
       <th><%= model_class.human_attribute_name(:product_name) %></th>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
@@ -18,6 +19,7 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= link_to order.id, order_path(order) %></td>
+        <td><%= order.PO_number %></td>
         <td><%= order.date %></td>
         <td><%= order.product_name %></td>
         <td><%= order.quantity %></td>

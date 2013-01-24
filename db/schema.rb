@@ -34,7 +34,8 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
   end
 
   create_table "orders", :force => true do |t|
-    t.datetime "date"
+    t.integer  "PO_number"
+    t.date     "date"
     t.string   "product_name"
     t.integer  "quantity"
     t.datetime "created_at",   :null => false

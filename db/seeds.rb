@@ -8,10 +8,10 @@
 
 
 Product.create( [
-    {:product_number=>"A001", :product_code=>"A2123", :product_name=>"lapy", :product_type=>"labour", :tax=>"0.25", :rate=>"251.23"},
-    {:product_number=>"SPC1210211729", :product_code=>"C8663448", :product_name=>"CP 1240 FR. HEAD", :product_type=>"labour", :tax=>"1", :rate=>"1"},
-    {:product_number=>"SPC1210211740", :product_code=>"C8663788", :product_name=>"CP 1240 ANVIL BLOCK", :product_type=>"labour", :tax=>"1", :rate=>"1"},
-    {:product_number=>"SPC1210211760", :product_code=>"D8663448", :product_name=>"CP 1240 CYLINDER", :product_type=>"labour", :tax=>"1", :rate=>"1"}
+    {:id=>"1", :product_number=>"A001", :product_code=>"A2123", :product_name=>"lapy", :product_type=>"labour", :tax=>"0.25", :rate=>"251.23"},
+    {:id=>"2", :product_number=>"SPC1210211729", :product_code=>"C8663448", :product_name=>"CP 1240 FR. HEAD", :product_type=>"labour", :tax=>"1", :rate=>"1"},
+    {:id=>"3", :product_number=>"SPC1210211740", :product_code=>"C8663788", :product_name=>"CP 1240 ANVIL BLOCK", :product_type=>"labour", :tax=>"1", :rate=>"1"},
+    {:id=>"4", :product_number=>"SPC1210211760", :product_code=>"D8663448", :product_name=>"CP 1240 CYLINDER", :product_type=>"labour", :tax=>"1", :rate=>"1"}
 ])
 
 BankAccount.create([

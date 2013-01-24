@@ -1,8 +1,15 @@
 <%= form_for @order, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
+
+    <div class="control-group">
+      <%= f.label :PO_number, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :PO_number, :class => 'number_field' %>
+      </div>
+    </div>
+    <div class="control-group">
     <%= f.label :date, :class => 'control-label' %>
     <div class="controls">
-      <%= f.datetime_select :date, :class => 'datetime_select' %>
+      <%= f.date_select :date, :class => 'date_select' %>
     </div>
   </div>
   <div class="control-group">
