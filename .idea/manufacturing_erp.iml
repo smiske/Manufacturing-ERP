@@ -42,6 +42,7 @@
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.19, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.5.0, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.4.0, RVM: ruby-1.9.3-p362) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="polyamorous (v0.5.0, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.3, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.4.4, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-cache (v1.2, RVM: ruby-1.9.3-p362) [gem]" level="application" />
@@ -50,6 +51,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rails (v3.2.11, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v3.2.11, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.0.3, RVM: ruby-1.9.3-p362) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ransack (v0.7.2, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v3.12, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ref (v1.0.2, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.2.2, RVM: ruby-1.9.3-p362) [gem]" level="application" />

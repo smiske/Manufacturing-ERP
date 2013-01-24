@@ -35,11 +35,10 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
 
   create_table "orders", :force => true do |t|
     t.datetime "date"
-    t.integer  "product_id"
+    t.string   "product_name"
     t.integer  "quantity"
-    t.integer  "cheque_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "product_transactions", :force => true do |t|

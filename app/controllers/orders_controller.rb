@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
-     @product = Product.all
+    @product = Product.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,6 +43,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(params[:order])
+    @product = Product.all
 
     respond_to do |format|
       if @order.save

@@ -2,9 +2,9 @@ class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
       t.datetime :date
-      t.integer :product_id
+      t.string :product_name
       t.integer :quantity
-      t.integer :cheque_id
+
 
       t.timestamps
     end

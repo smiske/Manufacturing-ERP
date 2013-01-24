@@ -1,9 +1,9 @@
 class Order < ActiveRecord::Base
-  attr_accessible :cheque_id, :date, :product_id, :quantity
+  attr_accessible  :date, :product_name, :quantity
 
-  validates :cheque_id, :presence => true
+
   validates :date, :presence => true
-  validates :product_id, :presence => true
+  validates :product_name, :presence => true
   validates :quantity, :presence => true
 
   belongs_to :product
