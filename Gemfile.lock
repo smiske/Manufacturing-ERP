@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/ernie/ransack.git
+  revision: 6d8904e42b8a8891417f8e80ce54960293721572
+  specs:
+    ransack (0.7.2)
+      actionpack (~> 3.0)
+      activerecord (~> 3.0)
+      polyamorous (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -60,6 +69,8 @@ GEM
     mime-types (1.19)
     multi_json (1.5.0)
     orm_adapter (0.4.0)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
     polyglot (0.3.3)
     rack (1.4.4)
     rack-cache (1.2)
@@ -120,6 +131,7 @@ DEPENDENCIES
   jquery-rails (~> 2.1.4)
   less-rails
   rails (= 3.2.11)
+  ransack!
   sqlite3
   therubyracer
   twitter-bootstrap-rails (~> 2.2.0)

@@ -3,7 +3,10 @@ class ProductsController < ApplicationController
   # GET /products.json
   before_filter :authenticate_user!
   def index
-    @products = Product.all
+
+
+    @search = Product.search(params[:q])
+    @products = @search.result
 
     respond_to do |format|
       format.html # index.html.erb
