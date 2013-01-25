@@ -26,6 +26,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/new.json
   def new
     @transaction = Transaction.new
+    @bank_transaction = BankTransaction.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,6 +43,7 @@ class TransactionsController < ApplicationController
   # POST /transactions.json
   def create
     @transaction = Transaction.new(params[:transaction])
+    @bank_transaction = BankTransaction.all
 
     respond_to do |format|
       if @transaction.save
