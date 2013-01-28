@@ -26,7 +26,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/new.json
   def new
     @transaction = Transaction.new
-    @bank_transaction = BankTransaction.all
+    @bank_transactions = BankTransaction.all
 
     respond_to do |format|
       format.html # new.html.erb
