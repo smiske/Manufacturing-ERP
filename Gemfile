@@ -29,6 +29,10 @@ gem 'devise', '~> 2.2.2'
 
 gem 'ransack', :git => "git://github.com/ernie/ransack.git" # Track git repo
 
+gem 'pdfkit', '~> 0.5.2'
+
+gem 'wkhtmltopdf-binary'
+
 
 
 # To use ActiveModel has_secure_password
