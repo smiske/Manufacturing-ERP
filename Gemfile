@@ -34,6 +34,8 @@ gem 'pdfkit', '~> 0.5.2'
 gem 'wkhtmltopdf-binary'
 
 
+gem 'mongrel', '~> 1.2.0.pre2'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
