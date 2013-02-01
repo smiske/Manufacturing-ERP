@@ -37,11 +37,9 @@ GEM
     activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    archive-tar-minitar (0.5.2)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
-    columnize (0.3.6)
     commonjs (0.2.6)
     daemons (1.1.9)
     devise (2.2.2)
@@ -66,8 +64,6 @@ GEM
       actionpack (>= 3.1)
       less (~> 2.2.0)
     libv8 (3.11.8.13)
-    linecache19 (0.5.12)
-      ruby_core_source (>= 0.1.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -107,16 +103,6 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     ref (1.0.2)
-    ruby-debug-base19 (0.11.25)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby_core_source (>= 0.1.4)
-    ruby-debug19 (0.11.6)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby-debug-base19 (>= 0.11.19)
-    ruby_core_source (0.1.5)
-      archive-tar-minitar (>= 0.5.2)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -145,6 +131,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    wkhtmltopdf (0.1.2)
     wkhtmltopdf-binary (0.9.9.1)
 
 PLATFORMS
@@ -158,10 +145,10 @@ DEPENDENCIES
   quiet_assets
   rails (= 3.2.11)
   ransack!
-  ruby-debug19
   sqlite3
   therubyracer
   thin
   twitter-bootstrap-rails (~> 2.2.0)
   uglifier (>= 1.0.3)
+  wkhtmltopdf
   wkhtmltopdf-binary

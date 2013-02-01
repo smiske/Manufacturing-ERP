@@ -9,4 +9,6 @@ class TaxInvoice < ActiveRecord::Base
   validates :total_requirement, :presence => true
 
   has_one :product
+
+
 end
