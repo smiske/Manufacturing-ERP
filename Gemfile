@@ -34,7 +34,11 @@ gem 'pdfkit', '~> 0.5.2'
 gem 'wkhtmltopdf-binary'
 
 
-gem 'mongrel', '~> 1.2.0.pre2'
+gem 'thin'
+
+gem 'quiet_assets'
+
+gem 'ruby-debug19', :require => 'ruby-debug'
 
 
 # To use ActiveModel has_secure_password
