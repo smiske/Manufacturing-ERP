@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
 
   create_table "tax_invoices", :force => true do |t|
     t.integer  "invoice_number"
-    t.datetime "invoice_date"
-    t.datetime "due_date"
+    t.date     "invoice_date"
+    t.date     "due_date"
     t.string   "product_name"
     t.string   "invoice_type"
     t.float    "labour_charges"

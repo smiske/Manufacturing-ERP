@@ -9,7 +9,7 @@
     <div class="control-group">
     <%= f.label :date, :class => 'control-label' %>
     <div class="controls">
-      <%= f.date_select :date, :class => 'date_select' %>
+      <%= f.date_select :date, :order => [:day, :month, :year], :class => 'date_select' %>
     </div>
   </div>
   <div class="control-group">
