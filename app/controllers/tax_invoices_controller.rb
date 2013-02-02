@@ -15,11 +15,18 @@ class TaxInvoicesController < ApplicationController
   # GET /tax_invoices/1.json
   def show
     @tax_invoice = TaxInvoice.find(params[:id])
-
+    session[:tax_invoice_id] = params[:id]
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @tax_invoice }
     end
+  end
+
+  def generate_pdf
+    @tax_invoice = TaxInvoice.find(session[:tax_invoice_id])
+
+
+    #session[:tax_invoice_id] = nil
   end
 
   # GET /tax_invoices/new

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
     if devise_controller?
       "login"
-    elsif controller_name == 'tax_invoices' && id ==
+    elsif controller_name == 'tax_invoices' && action_name == 'generate_pdf'
       "pdf"
      else
      "application"
