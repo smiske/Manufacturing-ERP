@@ -46,7 +46,7 @@ class BankTransactionsController < ApplicationController
   # POST /bank_transactions.json
   def create
     @bank_transaction = BankTransaction.new(params[:bank_transaction])
-
+    @bank_accounts = BankAccount.all
     respond_to do |format|
       if @bank_transaction.save
         format.html { redirect_to @bank_transaction, notice: 'Bank transaction was successfully created.' }
