@@ -4,6 +4,8 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:PO_number) %>:</strong></dt>
+  <dd><%= @tax_invoice.PO_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:invoice_number) %>:</strong></dt>
   <dd><%= @tax_invoice.invoice_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:invoice_date, :order => [:day, :month, :year],) %>:</strong></dt>
@@ -16,10 +18,12 @@
   <dd><%= @tax_invoice.invoice_type %></dd>
   <dt><strong><%= model_class.human_attribute_name(:labour_charges) %>:</strong></dt>
   <dd><%= @tax_invoice.labour_charges %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:quantity) %>:</strong></dt>
+  <dd><%= @tax_invoice.quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
   <dd><%= @tax_invoice.amount %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:total_requirement) %>:</strong></dt>
-  <dd><%= @tax_invoice.total_requirement %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:total_payment) %>:</strong></dt>
+  <dd><%= @tax_invoice.total_payment %></dd>
 </dl>
 
 <div class="form-actions">

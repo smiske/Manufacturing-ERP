@@ -33,6 +33,8 @@ class TaxInvoicesController < ApplicationController
   # GET /tax_invoices/new.json
   def new
     @tax_invoice = TaxInvoice.new
+    @products = Product.all
+    @orders = Order.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,12 +45,16 @@ class TaxInvoicesController < ApplicationController
   # GET /tax_invoices/1/edit
   def edit
     @tax_invoice = TaxInvoice.find(params[:id])
+    @products = Product.all
+    @orders = Order.all
   end
 
   # POST /tax_invoices
   # POST /tax_invoices.json
   def create
     @tax_invoice = TaxInvoice.new(params[:tax_invoice])
+    @products = Product.all
+    @orders = Order.all
 
     respond_to do |format|
       if @tax_invoice.save

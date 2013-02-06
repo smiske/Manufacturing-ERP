@@ -7,4 +7,6 @@ class Order < ActiveRecord::Base
   validates :quantity, :presence => true
 
   belongs_to :product
+
+  has_many :tax_invoices
 end

@@ -72,16 +72,18 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
   end
 
   create_table "tax_invoices", :force => true do |t|
+    t.integer  "PO_number"
     t.integer  "invoice_number"
     t.date     "invoice_date"
     t.date     "due_date"
     t.string   "product_name"
     t.string   "invoice_type"
     t.float    "labour_charges"
+    t.integer  "quantity"
     t.float    "amount"
-    t.integer  "total_requirement"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.float    "total_payment"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "transactions", :force => true do |t|
