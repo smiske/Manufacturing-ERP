@@ -9,7 +9,7 @@
       <th><%= model_class.human_attribute_name(:transaction_id) %></th>
       <th><%= model_class.human_attribute_name(:product_transaction_id) %></th>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= refund.transaction_id %></td>
         <td><%= refund.product_transaction_id %></td>
         <td><%= refund.quantity %></td>
-        <td><%=l refund.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_refund_path(refund), :class => 'btn btn-mini' %>

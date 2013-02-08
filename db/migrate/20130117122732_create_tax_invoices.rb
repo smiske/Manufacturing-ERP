@@ -9,8 +9,11 @@ class CreateTaxInvoices < ActiveRecord::Migration
       t.string :invoice_type
       t.float :labour_charges
       t.integer :quantity
-      t.float :amount
+      t.float :rate
       t.float :total_payment
+      t.float :amount
+      t.float :vat
+      t.float :tax
 
       t.timestamps
     end

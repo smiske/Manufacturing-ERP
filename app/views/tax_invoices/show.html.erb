@@ -16,14 +16,20 @@
   <dd><%= @tax_invoice.product_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:invoice_type) %>:</strong></dt>
   <dd><%= @tax_invoice.invoice_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:labour_charges) %>:</strong></dt>
-  <dd><%= @tax_invoice.labour_charges %></dd>
   <dt><strong><%= model_class.human_attribute_name(:quantity) %>:</strong></dt>
   <dd><%= @tax_invoice.quantity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rate) %>:</strong></dt>
+  <dd><%= @tax_invoice.rate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:labour_charges) %>:</strong></dt>
+  <dd><%= @tax_invoice.labour_charges %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tax) %>:</strong></dt>
+  <dd><%= @tax_invoice.tax %></dd>
   <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
-  <dd><%= @tax_invoice.amount %></dd>
+  <dd><%= @tax_invoice.amount.round(5) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vat) %>:</strong></dt>
+  <dd><%= @tax_invoice.vat.round(5) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:total_payment) %>:</strong></dt>
-  <dd><%= @tax_invoice.total_payment %></dd>
+  <dd><%= @tax_invoice.total_payment.round(5) %></dd>
 </dl>
 
 <div class="form-actions">

@@ -12,11 +12,14 @@
       <th><%= model_class.human_attribute_name(:due_date, :order => [:day, :month, :year]) %></th>
       <th><%= model_class.human_attribute_name(:product_name) %></th>
       <th><%= model_class.human_attribute_name(:invoice_type) %></th>
-      <th><%= model_class.human_attribute_name(:labour_charges) %></th>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
+      <th><%= model_class.human_attribute_name(:rate) %></th>
+      <th><%= model_class.human_attribute_name(:labour_charges) %></th>
+      <th><%= model_class.human_attribute_name(:tax) %></th>
       <th><%= model_class.human_attribute_name(:amount) %></th>
+      <th><%= model_class.human_attribute_name(:vat) %></th>
       <th><%= model_class.human_attribute_name(:total_payment) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -30,11 +33,14 @@
         <td><%= tax_invoice.due_date %></td>
         <td><%= tax_invoice.product_name %></td>
         <td><%= tax_invoice.invoice_type %></td>
-        <td><%= tax_invoice.labour_charges %></td>
         <td><%= tax_invoice.quantity %></td>
-        <td><%= tax_invoice.amount %></td>
-        <td><%= tax_invoice.total_payment %></td>
-        <td><%=l tax_invoice.created_at %></td>
+        <td><%= tax_invoice.rate %></td>
+        <td><%= tax_invoice.labour_charges %></td>
+        <td><%= tax_invoice.tax %></td>
+        <td><%= tax_invoice.amount.round(5) %></td>
+        <td><%= tax_invoice.vat.round(5) %></td>
+        <td><%= tax_invoice.total_payment.round(5) %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_tax_invoice_path(tax_invoice), :class => 'btn btn-mini' %>

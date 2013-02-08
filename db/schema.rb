@@ -80,8 +80,11 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
     t.string   "invoice_type"
     t.float    "labour_charges"
     t.integer  "quantity"
-    t.float    "amount"
+    t.float    "rate"
     t.float    "total_payment"
+    t.float    "amount"
+    t.float    "vat"
+    t.float    "tax"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
