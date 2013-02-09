@@ -1,99 +1,160 @@
 <html>
 <head>
-  <title>Invoice</title>
-</head>
- <body>
-    <h1>INVOICE</h1>
-    <table border="1" cellpadding="0" cellspacing="0">
-      <tr>
-        <td>
-          <dt><strong>Product Order NO.</strong></dt>
-        </td>
-        <td>
-          <dd><%= @tax_invoice.PO_number%></dd>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <dt><strong>Invoice Number:</strong></dt>
-        </td>
-        <td>
-            <dd><%= @tax_invoice.invoice_number %></dd>
-        </td>
-      </tr>
-      <tr>
-         <td>
-            <dt><strong>Invoice Date:</strong></dt>
-         </td>
-         <td>
-            <dd><%= @tax_invoice.invoice_date  %></dd>
-         </td>
-      </tr>
-      <tr>
-         <td>
-            <dt><strong>Due Date:</strong></dt>
-         </td>
-         <td>
-            <dd><%= @tax_invoice.due_date %></dd>
-         </td>
-      </tr>
-      <tr>
-        <td>
-            <dt><strong>Product Name:</strong></dt>
-        </td>
-        <td>
-            <dd><%= @tax_invoice.product_name %></dd>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <dt><strong>Invoice Type</strong></dt>
-        </td>
-        <td>
-            <dd><%= @tax_invoice.invoice_type %></dd>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <dt><strong>Quantity</strong></dt>
-        </td>
-        <td>
-          <dd><%= @tax_invoice.quantity %></dd>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <dt><strong>Rate</strong></dt>
-        </td>
-        <td>
-          <dd><%= @tax_invoice.rate %></dd>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <dt><strong>Amount</strong></dt>
-        </td>
-        <td>
-            <dd><%= @tax_invoice.amount %></dd>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <dt><strong>Labour Charges</strong></dt>
-        </td>
-        <td>
-          <dd><%= @tax_invoice.labour_charges %></dd>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <dt><strong>Total payment</strong></dt>
-        </td>
-        <td>
-            <dd><%= @tax_invoice.total_payment %></dd>
-        </td>
-       </tr>
-    </table>
+  <title>
 
- </body>
+  </title>
+</head>
+<body>
+
+
+   <table border="1" cellpadding="0" cellspacing="0">
+
+
+     <tr>
+       <td>
+         <table border="1" cellpadding="0" cellspacing="0">
+           <tr>
+             <td>Subject to Nashik Jurisdiction  Mob:9823255572</td>
+           </tr>
+           <tr>
+             <td>CHALLAN CUM INVOICE</td>
+           </tr>
+           <tr>
+             <td><h1>Shree Chakradhar Swami Engineering</h1></td>
+           </tr>
+           <tr>
+             <td>SPECIALIST IN: INTERNAL GRINDING/CYLINDRICAL GRINDING & SURFACE GRINDING(ROTARY)</td>
+           </tr>
+           <tr>
+             <td>Office: R/H No. 10, Gajanan R/H, Radha Krushna Nagar, Ashok Nagar, Satpur, Nashik-12.</td>
+           </tr>
+           <tr>
+             <td>
+               Works: Plot No. F-63,MIDC Satpur, Nashik-7(Behind-M.G.Industry)***Email:- shreechakradhar@gmail.com
+             </td>
+           </tr>
+         </table>
+       </td>
+     </tr>
+
+
+      <tr>
+        <td>
+          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="50%">
+                <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td>To,</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+              <td width="50%">
+                <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td>INVOICE No.</td>
+                    <td>&nbsp;</td>
+                    <td>Date</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>P.O.No.</td>
+                    <td>&nbsp;</td>
+                    <td>Date</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>Vendor Code No.</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <td width="100%">
+          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td>Sr. No.</td>
+              <td>Part No.</td>
+              <td>Material Description</td>
+              <td>Quantity</td>
+              <td>Rate</td>
+              <td>Amount</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>PAN No.:ACLPP8613R</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>Shop order_______Open No._____</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <tr>
+            <table>
+              <tr>
+                <td>
+                    VAT TIN No.:27780881734-V w.e.f.4.2.2012
+           CST TIN No.:27780881734-C w.e.f.4.2.2012
+                </td>
+              </tr>
+            </table>
+          </tr>
+        </td>
+        <td>
+           <table border="1" cellpadding="0" cellspacing="0">
+             <tr>
+               <td width="60%">TOTAL</td>
+               <td>&nbsp;</td>
+             </tr>
+             <tr>
+               <td width="60%">VAT@ </td>
+               <td>&nbsp;</td>
+             </tr>
+             <tr>
+               <td width="60%">GRAND TOTAL</td>
+               <td>&nbsp;</td>
+             </tr>
+           </table>
+        </td>
+      </tr>
+      <tr>
+        <td width="100%">Rs.in words:</td>
+      </tr>
+    </table>
+</body>
 </html>

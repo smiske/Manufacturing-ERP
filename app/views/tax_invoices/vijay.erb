@@ -1,0 +1,99 @@
+<html>
+<head>
+  <title>Invoice</title>
+</head>
+<body>
+<h1>INVOICE</h1>
+<table border="1" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+      <dt><strong>Product Order NO.</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.PO_number%></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Invoice Number:</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.invoice_number %></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Invoice Date:</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.invoice_date  %></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Due Date:</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.due_date %></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Product Name:</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.product_name %></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Invoice Type</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.invoice_type %></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Quantity</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.quantity %></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Rate</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.rate %></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Amount</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.amount %></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Labour Charges</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.labour_charges %></dd>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <dt><strong>Total payment</strong></dt>
+    </td>
+    <td>
+      <dd><%= @tax_invoice.total_payment %></dd>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
