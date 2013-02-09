@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
     @search = Product.search(params[:q])
     @products = @search.result
+    @products = Product.paginate(:page => params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # index.html.erb

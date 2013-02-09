@@ -5,6 +5,7 @@ class ProductTransactionsController < ApplicationController
   def index
     @product_transactions = ProductTransaction.all
 
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @product_transactions }
