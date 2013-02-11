@@ -2,19 +2,6 @@
 <head>
   <title>
   </title>
-  <style>
-      .logo img
-      {
-          height:100px;
-          width:100px;
-          margin:-30px 0px 0px 100px;
-      }
-      .logo h1
-      {
-          padding:0px 0px 0px 0px;
-          margin:-60px 0px 0px 0px;
-      }
-  </style>
 </head>
 <body>
 <table height="1250" width="1000" align="center">
@@ -25,14 +12,15 @@
           <td valign="top">
 
 
-            <div><center>Subject to Nashik Jurisdiction</center></div>
-            <div><center><U>CHALLAN CUM INVOICE</U></center></div>
-            <div class="logo"><img src="scsc.png"><center><h1><b>Shree Chakradhar Swami Engineering</b></center></h1></div>
-            <div><center><b>[ISO : 9001 Certified]</b></div>
-            <div><center><h3>SPECIALIST IN :</B> INTERNAL GRINDING / CYLINDRICAL GRINDING & SURFACE GRINDING (ROTARY)
-            </center></h3></div>
-            <div><center><b>Office : </b>R/H No. 10, Ganjanan R/h, Radha krushna Nagar, Ashok Nagar, Satpur, Nashik-12.</center></div>
-            <div><center><b>Works : </b>Plot No. F-63, MIDC Satpur, Nashik-7 (Behind - M. G. Industry. E-mail:shreechakradhar@gmail.com</center></div>
+            <div align="center">Subject to Nashik Jurisdiction</div>
+            <div align="center">CHALLAN CUM INVOICE</div>
+
+            <div class="logo"><%= image_tag("scsc.png") %><h1 align="center"><b>Shree Chakradhar Swami Engineering</b></h1></div>
+            <div align="center"><b>[ISO : 9001 Certified]</b></div>
+            <div align="center"><h3>SPECIALIST IN :</B> INTERNAL GRINDING / CYLINDRICAL GRINDING & SURFACE GRINDING (ROTARY)
+            </h3></div>
+            <div align="center"><b>Office : </b>R/H No. 10, Ganjanan R/h, Radha krushna Nagar, Ashok Nagar, Satpur, Nashik-12.</div>
+            <div align="center"><b>Works : </b>Plot No. F-63, MIDC Satpur, Nashik-7 (Behind - M. G. Industry. E-mail:shreechakradhar@gmail.com</div>
           </td>
         </tr>
       </table>
@@ -48,10 +36,10 @@
           <td valign="top">
             <table border="1" height="100%" width="100%" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="25%">INVOICE No.</td><td width="25%">&nbsp;</td><td width="25%">Date</td><td>&nbsp;</td>
+                <td width="25%" align="center">INVOICE No.</td><td width="25%" align="center"><%= @tax_invoice.invoice_number %></td><td width="25%" align="center">Date</td><td align="center"><%= @tax_invoice.invoice_date  %></td>
               </tr>
               <tr>
-                <td width="25%">P.O. No.</td><td width="25%">&nbsp;</td><td width="25%">Date</td><td width="25%">&nbsp;</td>
+                <td width="25%" align="center">P.O. No.</td><td width="25%" align="center"><%= @tax_invoice.PO_number%></td><td width="25%" align="center">Date</td><td width="25%" align="center"><%= @tax_invoice.due_date %></td>
 
               </tr>
               <tr>
@@ -67,40 +55,40 @@
       <table height="35" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top" height="15%">
-          <td width="5%"><center>Sr. No</center></td>
-          <td width="15%"><center>Part No.</center></td>
-          <td width="40%"><center>Material Description</center></td>
-          <td width="10%"><center>Quantity</center></td>
-          <td width="15%"><center>Rate</center></td>
-          <td width="15%"><center>Amount</center></td>
+          <td width="5%" align="center">Sr. No</td>
+          <td width="15%" align="center">Part No.</td>
+          <td width="40%" align="center">Material Description</td>
+          <td width="10%" align="center">Quantity</td>
+          <td width="15%" align="center">Rate</td>
+          <td width="15%" align="center">Amount</td>
         </tr>
       </table>
 
       <table height="35" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top" >
-          <td width="5%"><center>&nbsp;</center></td>
-          <td width="15%"><center>&nbsp;</center></td>
-          <td width="40%"><h3>&nbsp;&nbsp;LABOUR CHARGES ONLY</h3></td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td width="10%"><center>Rs.</center></td>
-          <td><center>Ps.</center></td>
-          <td width="10%"><center>Rs.</center></td>
-          <td><center>Ps.</center></td>
+          <td width="5%" align="center">&nbsp;</td>
+          <td width="15%" align="center">&nbsp;</td>
+          <td width="40%" align="center"><h3><%= @tax_invoice.invoice_type %></h3></td>
+          <td width="10%" align="center">&nbsp;</td>
+          <td width="15%" align="center">Rs.</td>
+
+          <td width="15%" align="center">Rs.</td>
+
         </tr>
       </table>
 
       <table height="450" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top">
-          <td width="5%"><center>&nbsp;</center></td>
-          <td width="15%"><center>&nbsp;</center></td>
-          <td width="40%"><h3>&nbsp;</h3></td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td><center>&nbsp;</center></td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td><center>&nbsp;</center></td>
+          <td width="5%" align="center">&nbsp;</td>
+          <td width="15%" align="center"><%= @tax_invoice.product_name %></td>
+          <td width="40%">&nbsp;</td>
+          <td width="10%" align="center"><%= @tax_invoice.quantity %></td>
+          <td width="15%" align="right"><%= @tax_invoice.rate %></td>
+
+          <td width="15%" align="right"><%= @tax_invoice.amount.round(5) %></td>
+
         </tr>
       </table>
 
@@ -108,14 +96,14 @@
       <table height="30" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top">
-          <td width="5%"><center>&nbsp;</center></td>
-          <td width="15%"><center>&nbsp;</center></td>
-          <td width="40%"><div>PAN No.:<b>ACLPP8613R</b></div></td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td><center>&nbsp;</center></td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td><center>&nbsp;</center></td>
+          <td width="5%" align="center">&nbsp;</td>
+          <td width="15%" align="center">&nbsp;</td>
+          <td width="40%" align="center"><div>PAN No.:<b>ACLPP8613R</b></div></td>
+          <td width="10%" align="center">&nbsp;</td>
+          <td width="15%" align="center">&nbsp;</td>
+
+          <td width="15%" align="center">&nbsp;</td>
+
         </tr>
       </table>
 
@@ -123,17 +111,17 @@
       <table height="30" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top">
-          <td width="5%"><center>&nbsp;</center></td>
-          <td width="15%"><center>&nbsp;</center></td>
+          <td width="5%" align="center">&nbsp;</td>
+          <td width="15%" align="center">&nbsp;</td>
           <td width="10%">Shop Order</td>
           <td width="10%">&nbsp;</td>
           <td width="10%">Open No.</td>
           <td width="10%">&nbsp;</td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td><center>&nbsp;</center></td>
-          <td width="10%"><center>&nbsp;</center></td>
-          <td><center>&nbsp;</center></td>
+          <td width="10%" align="center">&nbsp;</td>
+          <td width="15%" align="center">&nbsp;</td>
+
+          <td width="15%" align="center">&nbsp;</td>
+
         </tr>
       </table>
 
@@ -141,40 +129,40 @@
       <table height="150" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top">
-          <td width="60%">
+          <td width="70%">
             <div><b>VATTIN No. : 27780881734 - V w.e.f.4.2.2012</b></div>
             <div><b>CSTTIN No. : 27780881734 - C w.e.f.4.2.2012</b></div>
             <div align="justify">"I/We here by certified that my our registration certificate under the Maharashtra Value Added Tax act 2002 is in force on the date on which the sale of goods specified in this tax invoice is made by me/ us and that the transaction of sale covered by this tax invoice has been effected by me/us and each shall be accounted for the turn over Of sales which filling of returns and the due tax, if any, payable on the sale has been paid or shall be paid" </div>
           </td>
-          <td width="20%">
-            <table border="1" height="100%" width="100%" cellpadding="0" cellspacing="0">
+          <td width="15%">
+            <table border="1" height="100%" align=""  width="100%" cellpadding="0" cellspacing="0">
               <tr>
-                <td align="right"><b>TOTAL</b></td>
+                <td align="center"><b>TOTAL</b></td>
               </tr>
               <tr>
-                <td align="right"><B>VAT @</B></td>
+                <td align="center"><B>VAT @ <%= @tax_invoice.tax %></B></td>
               </tr>
               <tr>
-                <td align="right"><B>GRAND TOTAL</B></td>
+                <td align="center"><B>GRAND TOTAL</B></td>
               </tr>
 
             </table>
           </td>
-          <td width="20%">
+          <td width="15%">
             <table border="1" height="100%" width="100%" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="76%">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td width="76%" align="right"> <%= @tax_invoice.amount.round(5) %> </td>
+
 
               </tr>
               <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td align="right"> <%= @tax_invoice.vat.round(5) %> </td>
+
 
               </tr>
               <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td align="right"> <%= @tax_invoice.total_payment.round(5) %> </td>
+
 
               </tr>
 
