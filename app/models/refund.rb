@@ -5,7 +5,5 @@ class Refund < ActiveRecord::Base
   validates :quantity, :presence => true
   validates :transaction_id, :presence => true
 
-  belongs_to :transaction
 
-  belongs_to :product_transaction
 end

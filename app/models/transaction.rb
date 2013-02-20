@@ -6,8 +6,5 @@ class Transaction < ActiveRecord::Base
   validates :total, :presence => true
   validates :total_refund, :presence => true
 
-  belongs_to :bank_transaction
-  belongs_to :product_transaction
 
-  has_one :refund
 end

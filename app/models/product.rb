@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   validates :rate, :presence => true
   validates :tax, :presence => true
 
-  has_one :tax_invoice
+  has_many :tax_invoice
 
   has_many :orders
 
