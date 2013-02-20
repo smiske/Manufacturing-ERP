@@ -6,9 +6,12 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:bank_name) %></th>
+      <th><%= model_class.human_attribute_name(:transaction_type) %></th>
       <th><%= model_class.human_attribute_name(:type) %></th>
       <th><%= model_class.human_attribute_name(:micor_code) %></th>
-      <th><%= model_class.human_attribute_name(:bank_account_id) %></th>
+
+      <th><%= model_class.human_attribute_name(:amount) %></th>
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -17,9 +20,12 @@
     <% @bank_transactions.each do |bank_transaction| %>
       <tr>
         <td><%= link_to bank_transaction.id, bank_transaction_path(bank_transaction) %></td>
+        <td><%= bank_transaction.bank_account.bank_name +  bank_transaction.bank_account.account_number %></td>
+        <td><%= bank_transaction.trans_type %></td>
         <td><%= bank_transaction.transaction_type %></td>
         <td><%= bank_transaction.micor_code %></td>
-        <td><%= bank_transaction.bank_account_id %></td>
+
+        <td><%= bank_transaction.amount %></td>
 
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -34,6 +40,15 @@
     <% end %>
   </tbody>
 </table>
+
+
+<div class="flickr_pagination">
+  <div class="page_info">
+    <%= page_entries_info @bank_transactions %>
+  </div>
+  <%= will_paginate @bank_transactions, :container => false %>
+</div>
+
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_bank_transaction_path,

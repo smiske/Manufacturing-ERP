@@ -4,6 +4,8 @@ class BankAccountsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @bank_accounts = BankAccount.all
+    @bank_accounts = BankAccount.paginate(:page => params[:page], :per_page => 5)
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,6 +29,7 @@ class BankAccountsController < ApplicationController
   def new
     @bank_account = BankAccount.new
 
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bank_account }
@@ -42,6 +45,7 @@ class BankAccountsController < ApplicationController
   # POST /bank_accounts.json
   def create
     @bank_account = BankAccount.new(params[:bank_account])
+
 
     respond_to do |format|
       if @bank_account.save

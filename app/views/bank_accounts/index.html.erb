@@ -43,6 +43,13 @@
   </tbody>
 </table>
 
+<div class="flickr_pagination">
+  <div class="page_info">
+    <%= page_entries_info @bank_accounts %>
+  </div>
+  <%= will_paginate @bank_accounts, :container => false %>
+</div>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_bank_account_path,
             :class => 'btn btn-primary' %>

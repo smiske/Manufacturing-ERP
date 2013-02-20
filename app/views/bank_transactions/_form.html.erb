@@ -1,22 +1,45 @@
 <%= form_for @bank_transaction, :html => { :class => 'form-horizontal' } do |f| %>
+
+    <div class="control-group">
+      <%= f.label :bank_account_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :bank_account_id, options_for_select(@bank_accounts.map{|d| ["#{d.bank_name} - #{d.account_number}", d.id] }),{ :include_blank => true }, :class => 'number_field' %>
+      </div>
+    </div>
+
+
+
+    <div class="control-group">
+      <%= f.label :transaction_type, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.radio_button :trans_type, 'deposit', :class => 'number_field' %>
+        <%= label :trans_type, 'deposit', :value => 'deposit' %>
+        <%= f.radio_button :trans_type, 'withdraw', :class => 'number_field' %>
+        <%= label :trans_type, 'withdraw', :value => 'withdraw' %>
+      </div>
+   </div>
+
   <div class="control-group">
     <%= f.label :type, :class => 'control-label' %>
     <div class="controls">
       <%= f.select :transaction_type, options_for_select([["Select one" , ""], "Cash", "Cheque" ]), :class => 'control-label' %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :micor_code, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :micor_code, :class => 'number_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :bank_account_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :bank_account_id, options_for_select(@bank_accounts.map{|d| ["#{d.bank_name} - #{d.account_number}", d.id] }),{ :include_blank => true }, :class => 'number_field' %>
 
-    </div>
+
+
+  <div class="control-group">
+      <%= f.label :amount, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :amount, :class => 'number_field' %>
+      </div>
   </div>
 
   <div class="form-actions">

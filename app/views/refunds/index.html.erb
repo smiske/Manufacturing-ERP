@@ -35,6 +35,13 @@
   </tbody>
 </table>
 
+<div class="flickr_pagination">
+  <div class="page_info">
+    <%= page_entries_info @refunds %>
+  </div>
+  <%= will_paginate @refunds, :container => false %>
+</div>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_refund_path,
             :class => 'btn btn-primary' %>
