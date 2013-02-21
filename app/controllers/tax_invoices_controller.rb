@@ -54,9 +54,10 @@ class TaxInvoicesController < ApplicationController
   # POST /tax_invoices.json
   def create
     @tax_invoice = TaxInvoice.new(params[:tax_invoice])
-    @product = Product.where(:product_name => params[:tax_invoice][:product_name])
-    @tax_invoice.tax =  @product.first.tax
-    @tax_invoice.rate = @product.first.rate
+    @order = Order.where(:PO_number => params[:tax_invoice][:PO_number])
+    @tax_invoice.tax =  @order.first.tax
+    @tax_invoice.rate = @order.first.rate
+    @tax_invoice.product_name =  @order.first.product_name
 
 
     @products = Product.all

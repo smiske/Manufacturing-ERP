@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible  :PO_number, :date, :product_name, :quantity
+  attr_accessible  :PO_number, :date, :product_name, :quantity, :rate, :tax
 
   validates :PO_number, :presence => true
   validates :date, :presence => true

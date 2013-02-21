@@ -46,6 +46,11 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(params[:order])
+
+    @product = Product.where(:product_name => params[:order][:product_name])
+    @order.tax =  @product.first.tax
+    @order.rate = @product.first.rate
+
     @product = Product.all
 
     respond_to do |format|
