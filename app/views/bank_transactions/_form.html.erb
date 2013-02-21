@@ -26,7 +26,15 @@
     </div>
   </div>
 
-  <div class="control-group">
+    <div class="control-group">
+      <%= f.label :amount, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :amount, :class => 'number_field' %>
+      </div>
+    </div>
+
+
+    <div class="control-group">
     <%= f.label :micor_code, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :micor_code, :class => 'number_field' %>
@@ -34,13 +42,23 @@
   </div>
 
 
-
-  <div class="control-group">
-      <%= f.label :amount, :class => 'control-label' %>
+    <div class="control-group">
+      <%= f.label :PO_number, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :amount, :class => 'number_field' %>
+        <%= f.select :PO_number,options_for_select(@tax_invoices.map{|d| [d.PO_number, d.PO_number]}),{:include_blank => true}, :class => 'number_field' %>
       </div>
-  </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :invoice_number, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :invoice_number,options_for_select(@tax_invoices.map{|d| [d.invoice_number, d.invoice_number]}),{:include_blank => true}, :class => 'number_field' %>
+      </div>
+    </div>
+
+
+
+
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

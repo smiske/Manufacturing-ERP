@@ -31,6 +31,8 @@ class BankTransactionsController < ApplicationController
 
     @bank_accounts = BankAccount.all
 
+    @tax_invoices = TaxInvoice.all
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,12 +45,16 @@ class BankTransactionsController < ApplicationController
     @bank_transaction = BankTransaction.find(params[:id])
     @bank_accounts = BankAccount.all
 
+    @tax_invoices = TaxInvoice.all
+
   end
 
   # POST /bank_transactions
   # POST /bank_transactions.json
   def create
     @bank_transaction = BankTransaction.new(params[:bank_transaction])
+
+    @tax_invoices = TaxInvoice.all
 
     @bank_accounts = BankAccount.where(:id => params[:bank_transaction][:bank_account_id])
 
@@ -76,6 +82,8 @@ class BankTransactionsController < ApplicationController
     @bank_transaction = BankTransaction.find(params[:id])
     @bank_accounts = BankAccount.all
     @bank_accounts = BankAccount.all
+
+    @tax_invoices = TaxInvoice.all
 
     respond_to do |format|
       if @bank_transaction.update_attributes(params[:bank_transaction])

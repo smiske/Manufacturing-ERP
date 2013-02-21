@@ -9,9 +9,13 @@
       <th><%= model_class.human_attribute_name(:bank_name) %></th>
       <th><%= model_class.human_attribute_name(:transaction_type) %></th>
       <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:amount) %></th>
       <th><%= model_class.human_attribute_name(:micor_code) %></th>
 
-      <th><%= model_class.human_attribute_name(:amount) %></th>
+
+      <th><%= model_class.human_attribute_name(:PO_number) %></th>
+      <th><%= model_class.human_attribute_name(:invoice_number) %></th>
+
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -23,9 +27,13 @@
         <td><%= bank_transaction.bank_account.bank_name +  bank_transaction.bank_account.account_number %></td>
         <td><%= bank_transaction.trans_type %></td>
         <td><%= bank_transaction.transaction_type %></td>
+        <td><%= bank_transaction.amount %></td>
         <td><%= bank_transaction.micor_code %></td>
 
-        <td><%= bank_transaction.amount %></td>
+
+        <td><%= bank_transaction.PO_number %></td>
+        <td><%= bank_transaction.invoice_number %></td>
+
 
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

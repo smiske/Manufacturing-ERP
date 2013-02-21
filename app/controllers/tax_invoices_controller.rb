@@ -6,6 +6,12 @@ class TaxInvoicesController < ApplicationController
     @tax_invoices = TaxInvoice.all
     @tax_invoices = TaxInvoice.paginate(:page => params[:page], :per_page => 5)
 
+    @bank_transactions = BankTransaction.all
+
+
+    
+    
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tax_invoices }

@@ -1,5 +1,5 @@
 class TaxInvoice < ActiveRecord::Base
-  attr_accessible :rate, :due_date, :invoice_date, :invoice_number, :invoice_type, :labour_charges, :product_name, :total_payment, :PO_number, :quantity, :amount, :vat, :tax
+  attr_accessible :rate, :due_date, :invoice_date, :invoice_number, :invoice_type, :labour_charges, :product_name, :total_payment, :PO_number, :quantity, :amount, :vat, :tax, :payment
 
 
   validates :invoice_number, :presence => true
@@ -14,6 +14,7 @@ class TaxInvoice < ActiveRecord::Base
 
   has_one :product
   belongs_to :order
+  has_many :bank_transactions
 
   def amount
     if self.rate && self.quantity
