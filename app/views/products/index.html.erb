@@ -22,7 +22,7 @@
       <th><%= model_class.human_attribute_name(:product_name) %></th>
       <th><%= model_class.human_attribute_name(:vender_code) %></th>
       <th><%= model_class.human_attribute_name(:product_type) %></th>
-      <th><%= model_class.human_attribute_name(:tax) %></th>
+
       <th><%= model_class.human_attribute_name(:rate) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -37,7 +37,7 @@
         <td><%= product.product_name %></td>
         <td><%= product.vender_code %></td>
         <td><%= product.product_type %></td>
-        <td><%= product.tax %></td>
+
         <td><%= product.rate %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
