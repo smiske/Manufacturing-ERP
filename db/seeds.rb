@@ -134,7 +134,7 @@ Product.create( [
 
 BankAccount.create([
     {
-      :bank_name=>"SBI", :account_number=>"25425255", :branch_add=>"nasik", :ifsc_code=>"BBI123", :contact_number=>"54251652", :branch_manager_contact_no=>"42515362", :balance=>"2525125"
+      :bank_name=>"HDFC", :account_number=>"08782560002144", :branch_add=>"Surkan Arcade Bhujbal Farm Indira Nagar Nasik", :ifsc_code=>"HDFC0000878",
 
     }
             ]

@@ -1,5 +1,5 @@
 class BankTransaction < ActiveRecord::Base
-  attr_accessible :bank_account_id, :micor_code, :transaction_type, :trans_type, :amount, :PO_number, :invoice_number
+  attr_accessible :bank_account_id, :micor_code, :transaction_type, :trans_type, :amount
 
   validates :bank_account_id, :presence => true
 
@@ -11,7 +11,7 @@ class BankTransaction < ActiveRecord::Base
 
   belongs_to :bank_account
   
-  has_many :tax_invoices
+
 
 
 end

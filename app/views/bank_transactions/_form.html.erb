@@ -42,19 +42,6 @@
   </div>
 
 
-    <div class="control-group">
-      <%= f.label :PO_number, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.select :PO_number,options_for_select(@tax_invoices.map{|d| [d.PO_number, d.PO_number]}),{:include_blank => true}, :class => 'number_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :invoice_number, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.select :invoice_number,options_for_select(@tax_invoices.map{|d| [d.invoice_number, d.invoice_number]}),{:include_blank => true}, :class => 'number_field' %>
-      </div>
-    </div>
 
 
 

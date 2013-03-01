@@ -6,8 +6,7 @@ class CreateBankTransactions < ActiveRecord::Migration
       t.integer :bank_account_id
       t.string :trans_type
       t.float :amount
-      t.integer :PO_number
-      t.integer :invoice_number
+
 
       t.timestamps
     end

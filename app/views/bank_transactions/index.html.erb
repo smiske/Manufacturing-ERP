@@ -13,8 +13,7 @@
       <th><%= model_class.human_attribute_name(:micor_code) %></th>
 
 
-      <th><%= model_class.human_attribute_name(:PO_number) %></th>
-      <th><%= model_class.human_attribute_name(:invoice_number) %></th>
+
 
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -30,9 +29,6 @@
         <td><%= bank_transaction.amount %></td>
         <td><%= bank_transaction.micor_code %></td>
 
-
-        <td><%= bank_transaction.PO_number %></td>
-        <td><%= bank_transaction.invoice_number %></td>
 
 
         <td>

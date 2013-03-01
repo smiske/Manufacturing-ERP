@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
     t.integer  "bank_account_id"
     t.string   "trans_type"
     t.float    "amount"
-    t.integer  "PO_number"
-    t.integer  "invoice_number"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end

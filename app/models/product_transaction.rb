@@ -4,8 +4,6 @@ class ProductTransaction < ActiveRecord::Base
   validates :delivary_challan, :presence => true
   validates :delivary_type, :presence => true
   validates :tax, :presence => true
-  validates :tax_invoice_id, :presence => true
-  validates :transaction_id, :presence => true
 
 
 end
