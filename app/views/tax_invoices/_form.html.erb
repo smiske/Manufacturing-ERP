@@ -5,12 +5,7 @@
         <%= f.select :PO_number,options_for_select(@orders.map{|d| [d.PO_number, d.PO_number]}),{:include_blank => true}, :class => 'number_field' %>
       </div>
     </div>
-  <div class="control-group">
-    <%= f.label :invoice_number, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :invoice_number, :class => 'number_field' %>
-    </div>
-  </div>
+
   <div class="control-group">
     <%= f.label :invoice_date, :class => 'control-label' %>
     <div class="controls">
@@ -35,11 +30,31 @@
         <%= f.text_field :quantity, :class => 'text_field' %>
       </div>
    </div>
+    <div class="control-group">
+      <%= f.label :excise, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :excise, :class => 'text_field' %>
+      </div>
+    </div>
 
     <div class="control-group">
-      <%= f.label :labour_charges, :class => 'control-label' %>
+      <%= f.label :ed_cess, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :labour_charges, :class => 'text_field' %>
+        <%= f.text_field :ed_cess, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :edu_cess, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :edu_cess, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :value_added_tax, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :value_added_tax, :class => 'text_field' %>
       </div>
     </div>
 

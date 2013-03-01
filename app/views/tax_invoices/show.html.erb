@@ -6,8 +6,7 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:PO_number) %>:</strong></dt>
   <dd><%= @tax_invoice.PO_number %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:invoice_number) %>:</strong></dt>
-  <dd><%= @tax_invoice.invoice_number %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:invoice_date, :order => [:day, :month, :year],) %>:</strong></dt>
   <dd><%= @tax_invoice.invoice_date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:due_date, :order => [:day, :month, :year],) %>:</strong></dt>
@@ -20,12 +19,8 @@
   <dd><%= @tax_invoice.quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:rate) %>:</strong></dt>
   <dd><%= @tax_invoice.rate %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:labour_charges) %>:</strong></dt>
-  <dd><%= @tax_invoice.labour_charges %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tax) %>:</strong></dt>
-  <dd><%= @tax_invoice.tax %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
-  <dd><%= @tax_invoice.amount.round(2) %></dd>
+
+
   <dt><strong><%= model_class.human_attribute_name(:vat) %>:</strong></dt>
   <dd><%= @tax_invoice.vat.round(2) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:total_payment) %>:</strong></dt>

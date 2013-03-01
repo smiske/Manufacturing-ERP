@@ -90,8 +90,12 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
     t.float    "vat"
     t.float    "tax"
     t.string   "payment"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.float    "excise"
+    t.float    "ed_cess"
+    t.float    "edu_cess"
+    t.float    "value_added_tax"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "transactions", :force => true do |t|
