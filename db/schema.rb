@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
 
   create_table "products", :force => true do |t|
     t.string   "product_number"
-    t.string   "product_code"
+    t.string   "vender_code"
     t.string   "product_name"
     t.string   "product_type"
     t.float    "tax"

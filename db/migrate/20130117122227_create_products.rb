@@ -2,7 +2,7 @@ class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
       t.string :product_number
-      t.string :product_code
+      t.string :vender_code
       t.string :product_name
       t.string :product_type
       t.float :tax

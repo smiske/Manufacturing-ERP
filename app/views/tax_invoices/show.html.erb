@@ -25,11 +25,11 @@
   <dt><strong><%= model_class.human_attribute_name(:tax) %>:</strong></dt>
   <dd><%= @tax_invoice.tax %></dd>
   <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
-  <dd><%= @tax_invoice.amount.round(5) %></dd>
+  <dd><%= @tax_invoice.amount.round(2) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:vat) %>:</strong></dt>
-  <dd><%= @tax_invoice.vat.round(5) %></dd>
+  <dd><%= @tax_invoice.vat.round(2) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:total_payment) %>:</strong></dt>
-  <dd><%= @tax_invoice.total_payment.round(5) %></dd>
+  <dd><%= @tax_invoice.total_payment.round(2) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:payment) %>:</strong></dt>
   <dd><%= @tax_invoice.payment %></dd>
 

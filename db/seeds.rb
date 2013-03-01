@@ -8,11 +8,26 @@
 
 
 Product.create( [
-    {:id=>"1", :product_number=>"A001", :product_code=>"A2123", :product_name=>"lapy", :product_type=>"labour", :tax=>"0.25", :rate=>"251.23"},
-    {:id=>"2", :product_number=>"SPC1210211729", :product_code=>"C8663448", :product_name=>"CP 1240 FR. HEAD", :product_type=>"labour", :tax=>"1", :rate=>"1"},
-    {:id=>"3", :product_number=>"SPC1210211740", :product_code=>"C8663788", :product_name=>"CP 1240 ANVIL BLOCK", :product_type=>"labour", :tax=>"1", :rate=>"1"},
-    {:id=>"4", :product_number=>"SPC1210211760", :product_code=>"D8663448", :product_name=>"CP 1240 CYLINDER", :product_type=>"labour", :tax=>"1", :rate=>"1"}
-])
+{:id=>"1", :product_number=>"C8675445", :product_name=>"CP 1230 VR BACK HEAD", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"195.00"},
+{:id=>"2", :product_number=>"3303005190", :product_name=>"CP 6 SVR CYLINDER", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"387.00"},
+{:id=>"3", :product_number=>"C8683448", :product_name=>"CP 1240 VR BACK HEAD", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"215.00"},
+{:id=>"4", :product_number=>"D830412", :product_name=>"CP 9 HEX CHUCK", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"55.00"},
+{:id=>"5", :product_number=>"C8667412", :product_name=>"FR. HRAD CP 9 A", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"125.00"},
+{:id=>"6", :product_number=>"C8668413", :product_name=>"FR. HEAD CP 9 C", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"95.00"},
+{:id=>"7", :product_number=>"CP129856", :product_name=>"CYLINDER", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"65.00"},
+{:id=>"8", :product_number=>"D5011836", :product_name=>"VALVE CASE", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"25.00"},
+{:id=>"9", :product_number=>"D7852447", :product_name=>"CP 1210 VALVE CASE (OLD)", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"100.00"},
+{:id=>"10", :product_number=>"C8533836", :product_name=>"CP 4123 S CYLINDER", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"65.00"},
+{:id=>"11", :product_number=>"C9129856", :product_name=>"CP 4123 T CYLINDER", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"65.00"},
+{:id=>"12", :product_number=>"C8609445", :product_name=>"CP 1230 FR. HEAD", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"90.00"},
+{:id=>"13", :product_number=>"CP 1230 FR.HEAD", :product_name=>"", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"90.00"},
+{:id=>"14", :product_number=>"D8568439", :product_name=>"CP 22 CYLINDER", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"240.00"},
+{:id=>"15", :product_number=>"C8673439", :product_name=>"CP 22 VALVE CHEST", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"250.00"},
+{:id=>"16", :product_number=>"D5075836", :product_name=>"CP 4121 LVC LID", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>"20.00"},
+{:id=>"", :product_number=>"", :product_name=>"", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>""},
+{:id=>"", :product_number=>"", :product_name=>"", :vender_code=>"1875", :product_type=>"Labour Charges Only", :tax=>"0.0", :rate=>""},
+
+                ])
 
 BankAccount.create([
     {
