@@ -9,8 +9,10 @@
 
   <dt><strong><%= model_class.human_attribute_name(:invoice_date, :order => [:day, :month, :year],) %>:</strong></dt>
   <dd><%= @tax_invoice.invoice_date %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:due_date, :order => [:day, :month, :year],) %>:</strong></dt>
-  <dd><%= @tax_invoice.due_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:po_date, :order => [:day, :month, :year],) %>:</strong></dt>
+  <dd><%= @tax_invoice.po_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:product_number) %>:</strong></dt>
+  <dd><%= @tax_invoice.product_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:product_name) %>:</strong></dt>
   <dd><%= @tax_invoice.product_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:invoice_type) %>:</strong></dt>
@@ -19,14 +21,20 @@
   <dd><%= @tax_invoice.quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:rate) %>:</strong></dt>
   <dd><%= @tax_invoice.rate %></dd>
-
-
-  <dt><strong><%= model_class.human_attribute_name(:vat) %>:</strong></dt>
-  <dd><%= @tax_invoice.vat.round(2) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
+  <dd><%= @tax_invoice.amount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:excise) %>:</strong></dt>
+  <dd><%= @tax_invoice.excise.round(2) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ed_cess) %>:</strong></dt>
+  <dd><%= @tax_invoice.ed_cess.round(2) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:edu_cess) %>:</strong></dt>
+  <dd><%= @tax_invoice.edu_cess.round(2) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:value_added_tax) %>:</strong></dt>
+  <dd><%= @tax_invoice.value_added_tax.round(2) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:total_tax) %>:</strong></dt>
+  <dd><%= @tax_invoice.total_tax.round(2) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:total_payment) %>:</strong></dt>
   <dd><%= @tax_invoice.total_payment.round(2) %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:payment) %>:</strong></dt>
-  <dd><%= @tax_invoice.payment %></dd>
 
 </dl>
 

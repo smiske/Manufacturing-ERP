@@ -14,6 +14,7 @@
 
 
             <div align="center">Subject to Nashik Jurisdiction</div>
+            <div align="right">Mo.no :- </div>
             <div align="center">CHALLAN CUM INVOICE</div>
 
             <div class="logo"><%= image_tag("/app/assets/images/scsc.png")  %><h1 align="center"><b>Shree Chakradhar Swami Engineering</b></h1></div>
@@ -40,11 +41,11 @@
                 <td width="25%" align="center">INVOICE No.</td><td width="25%" align="center"><%= @tax_invoice.id %></td><td width="25%" align="center">Date</td><td align="center"><%= @tax_invoice.invoice_date  %></td>
               </tr>
               <tr>
-                <td width="25%" align="center">P.O. No.</td><td width="25%" align="center"><%= @tax_invoice.PO_number%></td><td width="25%" align="center">Date</td><td width="25%" align="center"><%= @tax_invoice.due_date %></td>
+                <td width="25%" align="center">P.O. No.</td><td width="25%" align="center"><%= @tax_invoice.PO_number%></td><td width="25%" align="center">Date</td><td width="25%" align="center"><%= @tax_invoice.po_date %></td>
 
               </tr>
               <tr>
-                <td colspan="4">Vendor Code No.</td>
+                <td colspan="4">Vendor Code No.:- 1875</td>
 
               </tr>
             </table>
@@ -56,11 +57,11 @@
       <table height="35" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top" height="15%">
-          <td width="5%" align="center">Sr. No</td>
+          <td width="4%" align="center">Sr. No</td>
           <td width="15%" align="center">Part No.</td>
-          <td width="40%" align="center">Material Description</td>
+          <td width="33%" align="center">Material Description</td>
           <td width="10%" align="center">Quantity</td>
-          <td width="15%" align="center">Rate</td>
+          <td width="23%" align="center">Rate</td>
           <td width="15%" align="center">Amount</td>
         </tr>
       </table>
@@ -68,42 +69,69 @@
       <table height="35" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top" >
-          <td width="5%" align="center">&nbsp;</td>
+          <td width="4%" align="center">&nbsp;</td>
           <td width="15%" align="center">&nbsp;</td>
-          <td width="40%" align="center"><h3><%= @tax_invoice.invoice_type %></h3></td>
+          <td width="33%" align="center"><h3><%= @tax_invoice.invoice_type %></h3></td>
           <td width="10%" align="center">&nbsp;</td>
-          <td width="15%" align="center">Rs.</td>
+          <td width="23%" align="center">Rs.</td>
 
           <td width="15%" align="center">Rs.</td>
 
         </tr>
       </table>
 
-      <table height="450" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
+      <table height="390" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top">
-          <td width="5%" align="center">&nbsp;</td>
-          <td width="15%" align="center"><%= @tax_invoice.product_name %></td>
-          <td width="40%">&nbsp;</td>
+          <td width="4%" align="center">&nbsp;</td>
+          <td width="15%" align="center"><%= @tax_invoice.product_number %></td>
+          <td width="33%" align="center"> <%= @tax_invoice.product_name %></td>
           <td width="10%" align="center"><%= @tax_invoice.quantity %></td>
-          <td width="15%" align="center"><%= @tax_invoice.rate %></td>
+          <td width="23%" align="center"><%= @tax_invoice.rate %></td>
 
           <td width="15%" align="center"><%= @tax_invoice.amount.round(2) %></td>
 
         </tr>
       </table>
 
+      <table height="30" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
+
+        <tr valign="top">
+          <td width="4%" align="center">&nbsp;</td>
+          <td width="15%" align="center">&nbsp;</td>
+          <td width="33%" align="center">&nbsp;</td>
+          <td width="10%" align="center">&nbsp;</td>
+          <td width="23%" align="center">EXCISE DUTY 12%</td>
+
+          <td width="15%" align="center"><%= @tax_invoice.excise.round(2) %></td>
+
+        </tr>
+      </table>
 
       <table height="30" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top">
-          <td width="5%" align="center">&nbsp;</td>
+          <td width="4%" align="center">&nbsp;</td>
           <td width="15%" align="center">&nbsp;</td>
-          <td width="40%" align="center"><div>PAN No.:<b>ACLPP8613R</b></div></td>
+          <td width="33%" align="center">&nbsp;</td>
           <td width="10%" align="center">&nbsp;</td>
-          <td width="15%" align="center">&nbsp;</td>
+          <td width="23%" align="center">2% Ed.Cess on 12% Excise</td>
 
+          <td width="15%" align="center"><%= @tax_invoice.ed_cess.round(2) %></td>
+
+        </tr>
+      </table>
+
+      <table height="30" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
+
+        <tr valign="top">
+          <td width="4%" align="center">&nbsp;</td>
           <td width="15%" align="center">&nbsp;</td>
+          <td width="33%" align="center"><div>PAN No.:<b>ACLPP8613R</b></div></td>
+          <td width="10%" align="center">&nbsp;</td>
+          <td width="23%" align="center">1% Edu.Cess on 12% Excise</td>
+
+          <td width="15%" align="center"><%= @tax_invoice.edu_cess.round(2) %></td>
 
         </tr>
       </table>
@@ -112,16 +140,16 @@
       <table height="30" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top">
-          <td width="5%" align="center">&nbsp;</td>
+          <td width="4%" align="center">&nbsp;</td>
           <td width="15%" align="center">&nbsp;</td>
-          <td width="10%">Shop Order</td>
-          <td width="10%">&nbsp;</td>
-          <td width="10%">Open No.</td>
-          <td width="10%">&nbsp;</td>
+          <td width="8.3%">Shop Order</td>
+          <td width="8.3%">&nbsp;</td>
+          <td width="8.3%">Open No.</td>
+          <td width="8.3%">&nbsp;</td>
           <td width="10%" align="center">&nbsp;</td>
-          <td width="15%" align="center">&nbsp;</td>
+          <td width="23%" align="center">VALUE ADDED TAX @ 12.5%</td>
 
-          <td width="15%" align="center">&nbsp;</td>
+          <td width="15%" align="center"><%= @tax_invoice.value_added_tax.round(2) %></td>
 
         </tr>
       </table>
@@ -130,21 +158,22 @@
       <table height="150" width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
 
         <tr valign="top">
-          <td width="70%">
+          <td width="60%">
             <div><b>VATTIN No. : 27780881734 - V w.e.f.4.2.2012</b></div>
             <div><b>CSTTIN No. : 27780881734 - C w.e.f.4.2.2012</b></div>
             <div align="justify">"I/We here by certified that my our registration certificate under the Maharashtra Value Added Tax act 2002 is in force on the date on which the sale of goods specified in this tax invoice is made by me/ us and that the transaction of sale covered by this tax invoice has been effected by me/us and each shall be accounted for the turn over Of sales which filling of returns and the due tax, if any, payable on the sale has been paid or shall be paid" </div>
           </td>
-          <td width="15%">
+          <td width="25%">
             <table border="1" height="100%" align=""  width="100%" cellpadding="0" cellspacing="0">
+
               <tr>
-                <td align="center"><b>TOTAL</b></td>
+                <td align="center"><b>TOTAL BASIC VALUE</b></td>
               </tr>
               <tr>
-                <td align="center"><B>VAT @ <%= @tax_invoice.tax %></B></td>
+                <td align="center"><B>Total Tax</B></td>
               </tr>
               <tr>
-                <td align="center"><B>GRAND TOTAL</B></td>
+                <td align="center"><B>GRAND VALUE</B></td>
               </tr>
 
             </table>
@@ -157,7 +186,7 @@
 
               </tr>
               <tr>
-                <td align="center"> <%= @tax_invoice.vat.round(2) %> </td>
+                <td align="center"><%= @tax_invoice.total_tax.round(2) %> </td>
 
 
               </tr>

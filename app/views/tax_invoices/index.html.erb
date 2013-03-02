@@ -10,18 +10,20 @@
       <th><%= model_class.human_attribute_name(:PO_number) %></th>
 
       <th><%= model_class.human_attribute_name(:invoice_date, :order => [:day, :month, :year]) %></th>
-      <th><%= model_class.human_attribute_name(:due_date, :order => [:day, :month, :year]) %></th>
+      <th><%= model_class.human_attribute_name(:po_date, :order => [:day, :month, :year]) %></th>
+      <th><%= model_class.human_attribute_name(:product_number) %></th>
       <th><%= model_class.human_attribute_name(:product_name) %></th>
       <th><%= model_class.human_attribute_name(:invoice_type) %></th>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
       <th><%= model_class.human_attribute_name(:rate) %></th>
+      <th><%= model_class.human_attribute_name(:amount) %></th>
       <th><%= model_class.human_attribute_name(:excise) %></th>
       <th><%= model_class.human_attribute_name(:ed_cess) %></th>
       <th><%= model_class.human_attribute_name(:edu_cess) %></th>
       <th><%= model_class.human_attribute_name(:value_added_tax) %></th>
-
+      <th><%= model_class.human_attribute_name(:total_tax) %></th>
       <th><%= model_class.human_attribute_name(:total_payment) %></th>
-      <th><%= model_class.human_attribute_name(:payment) %></th>
+
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -31,21 +33,22 @@
       <tr>
         <td><%= link_to tax_invoice.id, tax_invoice_path(tax_invoice) %></td>
         <td><%= tax_invoice.PO_number %></td>
-        <td><%= tax_invoice.invoice_number %></td>
+
         <td><%= tax_invoice.invoice_date %></td>
-        <td><%= tax_invoice.due_date %></td>
+        <td><%= tax_invoice.po_date %></td>
+        <td><%= tax_invoice.product_number %></td>
         <td><%= tax_invoice.product_name %></td>
         <td><%= tax_invoice.invoice_type %></td>
         <td><%= tax_invoice.quantity %></td>
         <td><%= tax_invoice.rate %></td>
-        <td><%= tax_invoice.excise %></td>
-        <td><%= tax_invoice.ed_cess %></td>
-        <td><%= tax_invoice.edu_cess %></td>
-        <td><%= tax_invoice.value_added_tax %></td>
+        <td><%= tax_invoice.amount %></td>
+        <td><%= tax_invoice.excise.round(2) %></td>
+        <td><%= tax_invoice.ed_cess.round(2) %></td>
+        <td><%= tax_invoice.edu_cess.round(2) %></td>
+        <td><%= tax_invoice.value_added_tax.round(2) %></td>
 
-
+        <td><%= tax_invoice.total_tax.round(2) %></td>
         <td><%= tax_invoice.total_payment.round(2) %></td>
-        <td><%= tax_invoice.payment %></td>
 
         <td>
 

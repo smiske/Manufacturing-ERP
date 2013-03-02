@@ -60,14 +60,61 @@ class TaxInvoicesController < ApplicationController
   # POST /tax_invoices.json
   def create
     @tax_invoice = TaxInvoice.new(params[:tax_invoice])
+
+    puts "vijay"
+
     @order = Order.where(:PO_number => params[:tax_invoice][:PO_number])
-
-    @tax_invoice.rate = @order.first.rate
-    @tax_invoice.product_name =  @order.first.product_name
-
 
     @products = Product.all
     @orders = Order.all
+
+   if params[:tax_invoice][:invoice_type] == "With Material"
+
+     @tax_invoice.rate = @order.first.rate
+     @tax_invoice.product_name =  @order.first.product_name
+     @tax_invoice.quantity =  @order.first.quantity
+     @tax_invoice.po_date =  @order.first.date
+     @tax_invoice.product_number =  @order.first.product_number
+
+      @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.quantity
+
+      @tax_invoice.excise = @tax_invoice.amount * 0.12
+
+      @tax_invoice.ed_cess = @tax_invoice.excise * 0.02
+
+      @tax_invoice.edu_cess = @tax_invoice.excise * 0.01
+
+      @tax_invoice.value_added_tax = @tax_invoice.amount * 0.125
+
+      @tax_invoice.total_tax = @tax_invoice.excise + @tax_invoice.ed_cess + @tax_invoice.edu_cess + @tax_invoice.value_added_tax
+
+      @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
+
+
+    elsif params[:tax_invoice][:invoice_type] == "Labour Charges Only"
+
+       @tax_invoice.rate = @order.first.rate
+       @tax_invoice.product_name =  @order.first.product_name
+       @tax_invoice.quantity =  @order.first.quantity
+       @tax_invoice.po_date =  @order.first.date
+       @tax_invoice.product_number =  @order.first.product_number
+
+       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.quantity
+
+       @tax_invoice.excise = 0.0
+
+       @tax_invoice.ed_cess = 0.0
+
+       @tax_invoice.edu_cess = 0.0
+
+       @tax_invoice.value_added_tax = @tax_invoice.amount * 0.125
+
+       @tax_invoice.total_tax = @tax_invoice.excise + @tax_invoice.ed_cess + @tax_invoice.edu_cess + @tax_invoice.value_added_tax
+
+       @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
+
+    end
+
 
     respond_to do |format|
       if @tax_invoice.save

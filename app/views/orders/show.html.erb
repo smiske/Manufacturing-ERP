@@ -8,6 +8,8 @@
   <dd><%= @order.PO_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date, :order => [:day, :month, :year]) %>:</strong></dt>
   <dd><%= @order.date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:product_number) %>:</strong></dt>
+  <dd><%= @order.product_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:product_name) %>:</strong></dt>
   <dd><%= @order.product_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:quantity) %>:</strong></dt>

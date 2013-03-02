@@ -48,8 +48,10 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
 
     @product = Product.where(:product_name => params[:order][:product_name])
-    @order.tax =  @product.first.tax
+
     @order.rate = @product.first.rate
+
+    @order.product_number = @product.first.product_number
 
     @product = Product.all
 
