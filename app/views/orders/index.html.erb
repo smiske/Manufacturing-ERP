@@ -23,6 +23,7 @@
         <td><%= link_to order.id, {:controller => "tax_invoices", :action => "new", :id3 => order.PO_number} %></td>
         <td><%= order.PO_number %></td>
         <td><%= order.date %></td>
+        <td><%= order.product_number %></td>
         <td><%= order.product_name %></td>
         <td><%= order.quantity %></td>
 
@@ -31,11 +32,7 @@
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_order_path(order), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      order_path(order),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+
         </td>
       </tr>
     <% end %>
