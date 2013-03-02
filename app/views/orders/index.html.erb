@@ -20,7 +20,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= link_to order.id, order_path(order) %></td>
+        <td><%= link_to order.id, {:controller => "tax_invoices", :action => "new", :id3 => order.PO_number} %></td>
         <td><%= order.PO_number %></td>
         <td><%= order.date %></td>
         <td><%= order.product_name %></td>

@@ -16,13 +16,13 @@
     <%= f.label :product_name, :class => 'control-label' %>
     <div class="controls">
 
-      <%= f.select :product_name, options_for_select(@product.map{|d|[d.product_name, d.product_name] }),{ :include_blank => true }, :class => 'number_field' %>
+      <%= f.select :product_name, options_for_select(@product.map{|d|[d.product_name, d.product_name] }, params[:id1]),{ :include_blank => true }, :class => 'number_field' %>
     </div>
   </div>
     <div class="control-group">
       <%= f.label :product_number, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :product_number, :class => 'number_field' %>
+        <%= f.text_field :product_number, :value => params[:id2], :class => 'number_field' %>
       </div>
     </div>
   <div class="control-group">

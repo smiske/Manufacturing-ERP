@@ -86,5 +86,7 @@ ManufacturingErp::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   match 'generate_pdf' => 'tax_invoices#generate_pdf'
 
+  match '/orders/new/:id1/:id2' => 'orders#new'
+
   root :to => 'orders#index'
 end

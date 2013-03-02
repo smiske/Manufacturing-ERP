@@ -31,7 +31,7 @@
 
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.id %></td>
+        <td><%= link_to product.id, {:controller => "orders", :action => "new", :id1 => product.product_name, :id2 => product.product_number} %></td>
         <td><%= product.product_number %></td>
 
         <td><%= product.product_name %></td>

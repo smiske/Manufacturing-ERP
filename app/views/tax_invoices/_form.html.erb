@@ -2,7 +2,7 @@
     <div class="control-group">
       <%= f.label :PO_number, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :PO_number,options_for_select(@orders.map{|d| [d.PO_number, d.PO_number]}),{:include_blank => true}, :class => 'number_field' %>
+        <%= f.select :PO_number,options_for_select(@orders.map{|d| [d.PO_number, d.PO_number]}, params[:id3]),{:include_blank => true}, :class => 'number_field' %>
       </div>
     </div>
 
