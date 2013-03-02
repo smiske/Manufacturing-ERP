@@ -134,7 +134,7 @@ Product.create( [
 
 BankAccount.create([
     {
-      :bank_name=>"HDFC", :account_number=>"08782560002144", :branch_add=>"Surkan Arcade Bhujbal Farm Indira Nagar Nasik", :ifsc_code=>"HDFC0000878",
+      :bank_name=>"HDFC", :account_number=>"08782560002144", :branch_add=>"Surkan Arcade Bhujbal Farm Indira Nagar Nasik", :ifsc_code=>"HDFC0000878", :balance =>"0.0"
 
     }
             ]
