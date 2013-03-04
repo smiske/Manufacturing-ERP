@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
   validates :product_number, :presence => true
   validates :product_type, :presence => true
   validates :rate, :presence => true
-  validates :tax, :presence => true
+  validates :vender_code, :presence => true
 
   has_one :tax_invoice
 

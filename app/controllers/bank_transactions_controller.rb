@@ -4,7 +4,7 @@ class BankTransactionsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @bank_transactions = BankTransaction.all
-    @bank_transactions = BankTransaction.paginate(:page => params[:page], :per_page => 5)
+    @bank_transactions = BankTransaction.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

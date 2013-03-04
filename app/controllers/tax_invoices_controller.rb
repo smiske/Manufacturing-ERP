@@ -4,7 +4,7 @@ class TaxInvoicesController < ApplicationController
   before_filter :authenticate_user!
   def index
     @tax_invoices = TaxInvoice.all
-    @tax_invoices = TaxInvoice.paginate(:page => params[:page], :per_page => 5)
+    @tax_invoices = TaxInvoice.paginate(:page => params[:page], :per_page => 10)
 
     @bank_transactions = BankTransaction.all
 
@@ -76,7 +76,9 @@ class TaxInvoicesController < ApplicationController
      @tax_invoice.po_date =  @order.first.date
      @tax_invoice.product_number =  @order.first.product_number
 
-      @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.quantity
+      @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity
+
+      @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
 
       @tax_invoice.excise = @tax_invoice.amount * 0.12
 
@@ -99,7 +101,9 @@ class TaxInvoicesController < ApplicationController
        @tax_invoice.po_date =  @order.first.date
        @tax_invoice.product_number =  @order.first.product_number
 
-       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.quantity
+       @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity
+
+       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
 
        @tax_invoice.excise = 0.0
 

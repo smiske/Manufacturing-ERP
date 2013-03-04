@@ -7,10 +7,11 @@
       <div class="field">
         <%= f.label :product_number_cont, "Name Contains" %>
         <%= f.text_field :product_number_cont %>
+        <div class="actions">
+          <%= f.submit "search" %>
+        </div>
       </div>
-    <div class="actions">
-      <%= f.submit "search" %>
-    </div>
+
 <% end %>
 
 <table class="table table-striped">

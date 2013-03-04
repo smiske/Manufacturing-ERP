@@ -1,5 +1,5 @@
 class BankAccount < ActiveRecord::Base
-  attr_accessible :account_number, :balance, :bank_name, :branch_add, :branch_manager_contact_no, :contact_number, :ifsc_code
+  attr_accessible :account_number, :balance, :bank_name, :branch_add, :ifsc_code
 
   validates :account_number, :presence => true
 
@@ -8,7 +8,7 @@ class BankAccount < ActiveRecord::Base
 
 
   validates :ifsc_code, :presence => true
-
+  validates :balance, :presence => true
 
   belongs_to :user
   has_many :bank_transactions

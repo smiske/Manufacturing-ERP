@@ -21,6 +21,8 @@ class CreateTaxInvoices < ActiveRecord::Migration
       t.float :value_added_tax
       t.float :total_tax
       t.float :total_payment
+      t.integer :return_quantity
+      t.integer :final_quantity
 
       t.timestamps
     end

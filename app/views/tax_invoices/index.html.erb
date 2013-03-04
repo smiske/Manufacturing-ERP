@@ -15,6 +15,8 @@
       <th><%= model_class.human_attribute_name(:product_name) %></th>
       <th><%= model_class.human_attribute_name(:invoice_type) %></th>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
+      <th><%= model_class.human_attribute_name(:return_quantity) %></th>
+      <th><%= model_class.human_attribute_name(:final_quantity) %></th>
       <th><%= model_class.human_attribute_name(:rate) %></th>
       <th><%= model_class.human_attribute_name(:amount) %></th>
       <th><%= model_class.human_attribute_name(:excise) %></th>
@@ -40,6 +42,8 @@
         <td><%= tax_invoice.product_name %></td>
         <td><%= tax_invoice.invoice_type %></td>
         <td><%= tax_invoice.quantity %></td>
+        <td><%= tax_invoice.return_quantity %></td>
+        <td><%= tax_invoice.final_quantity %></td>
         <td><%= tax_invoice.rate %></td>
         <td><%= tax_invoice.amount %></td>
         <td><%= tax_invoice.excise.round(2) %></td>

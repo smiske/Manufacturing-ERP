@@ -94,6 +94,8 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
     t.float    "value_added_tax"
     t.float    "total_tax"
     t.float    "total_payment"
+    t.integer  "return_quantity"
+    t.integer  "final_quantity"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

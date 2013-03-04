@@ -4,6 +4,8 @@ class Order < ActiveRecord::Base
   validates :date, :presence => true
   validates :product_name, :presence => true
   validates :quantity, :presence => true
+  validates :product_number, :presence => true
+
 
   belongs_to :product
 
