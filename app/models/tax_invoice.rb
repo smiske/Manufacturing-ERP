@@ -9,7 +9,7 @@ class TaxInvoice < ActiveRecord::Base
 
   validates :PO_number, :presence => true
 
-
+  validates :return_quantity, :presence => true
 
 
   has_one :product
