@@ -8,7 +8,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:PO_number) %></th>
-
+      <th><%= model_class.human_attribute_name(:company) %></th>
       <th><%= model_class.human_attribute_name(:invoice_date, :order => [:day, :month, :year]) %></th>
       <th><%= model_class.human_attribute_name(:po_date, :order => [:day, :month, :year]) %></th>
       <th><%= model_class.human_attribute_name(:product_number) %></th>
@@ -35,7 +35,7 @@
       <tr>
         <td><%= link_to tax_invoice.id, tax_invoice_path(tax_invoice) %></td>
         <td><%= tax_invoice.PO_number %></td>
-
+        <td><%= tax_invoice.company.name %></td>
         <td><%= tax_invoice.invoice_date %></td>
         <td><%= tax_invoice.po_date %></td>
         <td><%= tax_invoice.product_number %></td>

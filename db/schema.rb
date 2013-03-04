@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20130304102052) do
     t.float    "total_payment"
     t.integer  "return_quantity"
     t.integer  "final_quantity"
+    t.integer  "company_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

@@ -42,6 +42,7 @@ class TaxInvoicesController < ApplicationController
     @tax_invoice = TaxInvoice.new
     @products = Product.all
     @orders = Order.all
+    @companies = Company.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -54,6 +55,7 @@ class TaxInvoicesController < ApplicationController
     @tax_invoice = TaxInvoice.find(params[:id])
     @products = Product.all
     @orders = Order.all
+    @companies = Company.all
   end
 
   # POST /tax_invoices
@@ -61,7 +63,7 @@ class TaxInvoicesController < ApplicationController
   def create
     @tax_invoice = TaxInvoice.new(params[:tax_invoice])
 
-    puts "vijay"
+    @companies = Company.all
 
     @order = Order.where(:PO_number => params[:tax_invoice][:PO_number])
 

@@ -6,6 +6,13 @@
       </div>
     </div>
 
+    <div class="control-group">
+      <%= f.label :company_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :company_id, options_for_select(@companies.map{|d| [d.name, d.id] }),{ :include_blank => true }, :class => 'number_field' %>
+      </div>
+    </div>
+
   <div class="control-group">
     <%= f.label :invoice_date, :class => 'control-label' %>
     <div class="controls">
@@ -16,7 +23,7 @@
   <div class="control-group">
     <%= f.label :invoice_type, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :invoice_type, options_for_select(@orders.map{|d|[d.product_type, d.product_type] }, :value => params[:id4]), :class => 'text_field' %>
+      <%= f.select :invoice_type, options_for_select(@orders.map{|d|[d.product_type, d.product_type] }, params[:id4]), :class => 'text_field' %>
     </div>
   </div>
 

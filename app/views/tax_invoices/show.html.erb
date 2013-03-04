@@ -6,7 +6,8 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:PO_number) %>:</strong></dt>
   <dd><%= @tax_invoice.PO_number %></dd>
-
+  <dt><strong><%= model_class.human_attribute_name(:company) %>:</strong></dt>
+  <dd><%= @tax_invoice.company.name  %></dd>
   <dt><strong><%= model_class.human_attribute_name(:invoice_date, :order => [:day, :month, :year],) %>:</strong></dt>
   <dd><%= @tax_invoice.invoice_date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:po_date, :order => [:day, :month, :year],) %>:</strong></dt>

@@ -23,6 +23,7 @@ class CreateTaxInvoices < ActiveRecord::Migration
       t.float :total_payment
       t.integer :return_quantity
       t.integer :final_quantity
+      t.integer :company_id
 
       t.timestamps
     end
