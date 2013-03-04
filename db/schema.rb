@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130118090910) do
     t.float    "rate"
     t.float    "tax"
     t.string   "product_number"
+    t.string   "product_type"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end

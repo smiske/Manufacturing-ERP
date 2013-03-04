@@ -16,7 +16,7 @@
   <div class="control-group">
     <%= f.label :invoice_type, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :invoice_type, options_for_select([["Select One", ""], "Labour Charges Only", "With Material"]), :class => 'text_field' %>
+      <%= f.select :invoice_type, options_for_select(@orders.map{|d|[d.product_type, d.product_type] }, :value => params[:id4]), :class => 'text_field' %>
     </div>
   </div>
 

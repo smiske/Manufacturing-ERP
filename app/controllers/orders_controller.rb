@@ -53,6 +53,8 @@ class OrdersController < ApplicationController
 
     @order.product_number = @product.first.product_number
 
+    @order.product_type = @product.first.product_type
+
     @product = Product.all
 
     respond_to do |format|

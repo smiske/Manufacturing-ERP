@@ -8,6 +8,8 @@ class CreateOrders < ActiveRecord::Migration
       t.float :rate
       t.float :tax
       t.string :product_number
+      t.string :product_type
+
       t.timestamps
     end
   end
