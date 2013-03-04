@@ -21,17 +21,7 @@
     <favorites_list name="manufacturing_erp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="14" selection-start="2496" selection-end="2496" vertical-scroll-proportion="0.33620688">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -41,7 +31,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/bank_transactions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/products/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
@@ -57,6 +46,7 @@
         <option value="$PROJECT_DIR$/app/views/tax_invoices/generate_pdf.html.erb" />
         <option value="$PROJECT_DIR$/app/models/tax_invoice.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/companies/index.html.erb" />
       </list>
     </option>
   </component>
@@ -116,6 +106,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="manufacturing_erp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manufacturing_erp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manufacturing_erp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -488,27 +492,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/products/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="10" selection-start="76" selection-end="278" vertical-scroll-proportion="0.15517241">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20130117122732_create_tax_invoices.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="18" selection-start="575" selection-end="575" vertical-scroll-proportion="0.5834684">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tax_invoices/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="41" selection-start="1089" selection-end="1089" vertical-scroll-proportion="0.55">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tax_invoices/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="87" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.10455312">
@@ -565,13 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tax_invoices/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="33" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.4806071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="2" selection-start="157" selection-end="157" vertical-scroll-proportion="0.15517241">
@@ -595,7 +571,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="14" selection-start="2496" selection-end="2496" vertical-scroll-proportion="0.33620688">
+        <state line="54" column="40" selection-start="2536" selection-end="2536" vertical-scroll-proportion="0.33620688">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/companies/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/companies/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/companies/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="5" selection-start="382" selection-end="382" vertical-scroll-proportion="0.2782462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tax_invoices/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="33" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.5564924">
           <folding />
         </state>
       </provider>
