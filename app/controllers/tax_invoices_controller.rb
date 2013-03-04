@@ -61,6 +61,8 @@ class TaxInvoicesController < ApplicationController
   # POST /tax_invoices
   # POST /tax_invoices.json
   def create
+
+
     @tax_invoice = TaxInvoice.new(params[:tax_invoice])
 
     @companies = Company.all
@@ -69,6 +71,23 @@ class TaxInvoicesController < ApplicationController
 
     @products = Product.all
     @orders = Order.all
+
+    if params[:tax_invoice][:company_id].to_i > 1
+      @temp_id = TaxInvoice.last.id
+        if @temp_id < 100000
+         @temp_id = 100000
+        else
+         @temp_id = @temp_id +1
+        end
+      @tax_invoice.id = @temp_id
+    else
+      @last_record_for_atlas_copco = TaxInvoice.where("id < 100000")
+
+      @temp_id = @last_record_for_atlas_copco.last.id + 1
+      puts @temp_id
+      @tax_invoice.id = @temp_id
+
+    end
 
    if params[:tax_invoice][:invoice_type] == "With Material"
 
