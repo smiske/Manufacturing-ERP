@@ -28,7 +28,7 @@
   <%= link_to t('.back', :default => t("helpers.links.back")),
               products_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_product_path(@product), :class => 'btn' %>
+               {:controller => "products", :action => "edit", :id5 => @product.product_type}, :class => 'btn' %>
   <%= link_to "Order",{:controller => "orders", :action => "new", :id1 => @product.product_name, :id2 => @product.product_number}, :class => "btn" %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               product_path(@product),

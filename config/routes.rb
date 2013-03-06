@@ -91,5 +91,8 @@ ManufacturingErp::Application.routes.draw do
 
   match '/orders/new/:id1/:id2' => 'orders#new'
 
+  match '/tax_invoice/new/:id3/:id4' => 'tax_invoice#new'
+
+
   root :to => 'orders#index'
 end
