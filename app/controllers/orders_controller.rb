@@ -39,6 +39,7 @@ class OrdersController < ApplicationController
   def edit
     @order = Order.find(params[:id])
     @product = Product.all
+    @orders = Order.all
 
   end
 

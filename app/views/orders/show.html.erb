@@ -24,7 +24,7 @@
   <%= link_to t('.back', :default => t("helpers.links.back")),
               orders_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_order_path(@order), :class => 'btn' %>
+              {:controller => "orders", :action => "edit", :id6 => @order.product_name, :id7 => @order.product_number},:class => 'btn' %>
   <%= link_to "Tax Invoice",{:controller => "tax_invoices", :action => "new", :id3 => @order.PO_number, :id4 => @order.product_type}, :class => "btn" %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               order_path(@order),

@@ -3,4 +3,47 @@
   <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
                                    :default => "Edit #{model_class.model_name.human}") %></h1>
 </div>
-<%= render :partial => 'form' %>
+
+
+<%= form_for @order, :html => { :class => 'form-horizontal' } do |f| %>
+
+    <div class="control-group">
+      <%= f.label :PO_number, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :PO_number, :class => 'number_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :date, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.date_select :date, :order => [:day, :month, :year], :class => 'date_select' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :product_name, :class => 'control-label' %>
+      <div class="controls">
+
+        <%= f.select :product_name, options_for_select(@product.map{|d|[d.product_name, d.product_name] }, params[:id6]),{ :include_blank => true }, :class => 'number_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :product_number, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :product_number, :value => params[:id7], :class => 'number_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :quantity, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :quantity, :class => 'number_field' %>
+      </div>
+    </div>
+
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  orders_path, :class => 'btn' %>
+    </div>
+<% end %>
+
