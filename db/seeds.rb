@@ -141,3 +141,8 @@ BankAccount.create([
 
 )
 
+Company.create([
+               {
+                   :name =>"Atlas Copco (India) Ltd", :add =>"90 MIDC Satpure Nasik 422007"
+               }
+])
