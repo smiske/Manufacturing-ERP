@@ -3,6 +3,9 @@
   <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
                                    :default => "Edit #{model_class.model_name.human}") %></h1>
 </div>
+
+
+
 <%= form_for @tax_invoice, :html => { :class => 'form-horizontal' } do |f| %>
     <div class="control-group">
       <%= f.label :PO_number, :class => 'control-label' %>
@@ -37,6 +40,19 @@
       <div class="controls">
         <%= f.text_field :return_quantity, :class => 'text_field' %>
       </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :paid_payment, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :paid_payment, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  tax_invoices_path, :class => 'btn' %>
     </div>
 
 <% end %>

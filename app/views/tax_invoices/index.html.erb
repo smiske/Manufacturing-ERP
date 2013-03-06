@@ -22,8 +22,8 @@
 
       <th><%= model_class.human_attribute_name(:total_tax) %></th>
       <th><%= model_class.human_attribute_name(:total_payment) %></th>
-
-
+      <th><%= model_class.human_attribute_name(:paid_payment) %></th>
+      <th><%= model_class.human_attribute_name(:unpaid_payment) %></th>
 
     </tr>
   </thead>
@@ -47,7 +47,8 @@
 
         <td><%= tax_invoice.total_tax.round(2) %></td>
         <td><%= tax_invoice.total_payment.round(2) %></td>
-
+        <td><%= tax_invoice.paid_payment %></td>
+        <td><%= tax_invoice.unpaid_payment %></td>
         <td>
 
 

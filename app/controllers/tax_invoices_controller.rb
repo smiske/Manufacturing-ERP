@@ -59,6 +59,9 @@ class TaxInvoicesController < ApplicationController
     @orders = Order.all
     @companies = Company.all
     @tax_invoices = TaxInvoice.all
+
+
+
   end
 
   # POST /tax_invoices
@@ -118,6 +121,11 @@ class TaxInvoicesController < ApplicationController
 
       @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
 
+     @tax_invoice.paid_payment = 0.0
+
+     @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment
+
+
 
     elsif params[:tax_invoice][:invoice_type] == "Labour Charges Only"
 
@@ -143,7 +151,13 @@ class TaxInvoicesController < ApplicationController
 
        @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
 
+       @tax_invoice.paid_payment = 0.0
+
+       @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment
+
     end
+
+
 
 
     respond_to do |format|
@@ -162,8 +176,48 @@ class TaxInvoicesController < ApplicationController
   def update
     @tax_invoice = TaxInvoice.find(params[:id])
 
+    @order = Order.where(:PO_number => params[:tax_invoice][:PO_number])
+    @products = Product.all
+    @orders = Order.all
+
+    if params[:tax_invoice][:invoice_type] == "With Material"
+      @tax_invoice.rate = @order.first.rate
+      @tax_invoice.product_name =  @order.first.product_name
+      @tax_invoice.quantity =  @order.first.quantity
+      @tax_invoice.po_date =  @order.first.date
+      @tax_invoice.product_number =  @order.first.product_number
+      @tax_invoice.final_quantity = @tax_invoice.quantity - params[:tax_invoice][:return_quantity].to_i
+      @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
+      @tax_invoice.excise = @tax_invoice.amount * 0.12
+      @tax_invoice.ed_cess = @tax_invoice.excise * 0.02
+      @tax_invoice.edu_cess = @tax_invoice.excise * 0.01
+      @tax_invoice.value_added_tax = @tax_invoice.amount * 0.125
+      @tax_invoice.total_tax = @tax_invoice.excise + @tax_invoice.ed_cess + @tax_invoice.edu_cess + @tax_invoice.value_added_tax
+      @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
+      @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment
+    elsif params[:tax_invoice][:invoice_type] == "Labour Charges Only"
+      @tax_invoice.rate = @order.first.rate
+      @tax_invoice.product_name =  @order.first.product_name
+      @tax_invoice.quantity =  @order.first.quantity
+      @tax_invoice.po_date =  @order.first.date
+      @tax_invoice.product_number =  @order.first.product_number
+      @tax_invoice.final_quantity = @tax_invoice.quantity - params[:tax_invoice][:return_quantity].to_i
+      @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
+      @tax_invoice.excise = 0.0
+      @tax_invoice.ed_cess = 0.0
+      @tax_invoice.edu_cess = 0.0
+      @tax_invoice.value_added_tax = @tax_invoice.amount * 0.125
+      @tax_invoice.total_tax = @tax_invoice.excise + @tax_invoice.ed_cess + @tax_invoice.edu_cess + @tax_invoice.value_added_tax
+      @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
+      @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment
+    end
+    puts "tax_invoice_id = #{@tax_invoice.id}"
+    puts @tax_invoice.return_quantity
+    @tax_invoice.update_attributes(params[:tax_invoice])
     respond_to do |format|
-      if @tax_invoice.update_attributes(params[:tax_invoice])
+
+      if @tax_invoice.save
+        puts "saved"
         format.html { redirect_to @tax_invoice, notice: 'Tax invoice was successfully updated.' }
         format.json { head :no_content }
       else
