@@ -56,6 +56,7 @@ class TaxInvoicesController < ApplicationController
     @products = Product.all
     @orders = Order.all
     @companies = Company.all
+    @tax_invoices = TaxInvoice.all
   end
 
   # POST /tax_invoices
