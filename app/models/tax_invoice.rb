@@ -13,6 +13,8 @@ class TaxInvoice < ActiveRecord::Base
 
   validates :company_id, :presence => true
 
+  validates :paid_payment, :presence => true
+
 
   has_one :product
   belongs_to :order

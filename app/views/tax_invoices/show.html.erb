@@ -43,7 +43,7 @@
   <dt><strong><%= model_class.human_attribute_name(:paid_payment) %>:</strong></dt>
   <dd><%= @tax_invoice.paid_payment %></dd>
   <dt><strong><%= model_class.human_attribute_name(:unpaid_payment) %>:</strong></dt>
-  <dd><%= @tax_invoice.unpaid_payment %></dd>
+  <dd><%= @tax_invoice.unpaid_payment.round(2) %></dd>
 </dl>
 
 <div class="form-actions">

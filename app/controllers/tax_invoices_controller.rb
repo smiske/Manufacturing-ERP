@@ -105,7 +105,7 @@ class TaxInvoicesController < ApplicationController
      @tax_invoice.po_date =  @order.first.date
      @tax_invoice.product_number =  @order.first.product_number
 
-      @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity
+      @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity.to_i
 
       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
 
@@ -121,7 +121,7 @@ class TaxInvoicesController < ApplicationController
 
       @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
 
-     @tax_invoice.paid_payment = 0.0
+
 
      @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment
 
@@ -135,7 +135,7 @@ class TaxInvoicesController < ApplicationController
        @tax_invoice.po_date =  @order.first.date
        @tax_invoice.product_number =  @order.first.product_number
 
-       @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity
+       @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity.to_i
 
        @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
 
@@ -151,9 +151,8 @@ class TaxInvoicesController < ApplicationController
 
        @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
 
-       @tax_invoice.paid_payment = 0.0
 
-       @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment
+       @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment.to_f
 
     end
 
@@ -194,7 +193,7 @@ class TaxInvoicesController < ApplicationController
       @tax_invoice.value_added_tax = @tax_invoice.amount * 0.125
       @tax_invoice.total_tax = @tax_invoice.excise + @tax_invoice.ed_cess + @tax_invoice.edu_cess + @tax_invoice.value_added_tax
       @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
-      @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment
+      @tax_invoice.unpaid_payment = @tax_invoice.total_payment - params[:tax_invoice][:paid_payment].to_f
     elsif params[:tax_invoice][:invoice_type] == "Labour Charges Only"
       @tax_invoice.rate = @order.first.rate
       @tax_invoice.product_name =  @order.first.product_name
@@ -209,7 +208,7 @@ class TaxInvoicesController < ApplicationController
       @tax_invoice.value_added_tax = @tax_invoice.amount * 0.125
       @tax_invoice.total_tax = @tax_invoice.excise + @tax_invoice.ed_cess + @tax_invoice.edu_cess + @tax_invoice.value_added_tax
       @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
-      @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment
+      @tax_invoice.unpaid_payment = @tax_invoice.total_payment - params[:tax_invoice][:paid_payment].to_f
     end
     puts "tax_invoice_id = #{@tax_invoice.id}"
     puts @tax_invoice.return_quantity
