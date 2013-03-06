@@ -3,7 +3,7 @@ class TaxInvoice < ActiveRecord::Base
 
 
 
-  validates :invoice_type, :presence => true
+
 
 
 

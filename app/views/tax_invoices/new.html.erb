@@ -3,4 +3,49 @@
   <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
                                  :default => "New #{model_class.model_name.human}") %></h1>
 </div>
-<%= render :partial => 'form' %>
+<%= form_for @tax_invoice, :html => { :class => 'form-horizontal' } do |f| %>
+    <div class="control-group">
+      <%= f.label :PO_number, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :PO_number,options_for_select(@orders.map{|d| [d.PO_number, d.PO_number]}, params[:id3]),{:include_blank => true}, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :company_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :company_id, options_for_select(@companies.map{|d| [d.name, d.id] }),{ :include_blank => true }, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :invoice_date, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.date_select  :invoice_date, :order => [:day, :month, :year], :class => 'datetime_select' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :invoice_type, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :invoice_type, options_for_select(@orders.map{|d|[d.product_type, d.product_type] }, params[:id4]), :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :return_quantity, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :return_quantity, :class => 'text_field' %>
+      </div>
+    </div>
+
+
+
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  tax_invoices_path, :class => 'btn' %>
+    </div>
+<% end %>
+

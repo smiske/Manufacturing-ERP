@@ -44,6 +44,8 @@ class TaxInvoicesController < ApplicationController
     @orders = Order.all
     @companies = Company.all
 
+
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @tax_invoice }
@@ -86,7 +88,7 @@ class TaxInvoicesController < ApplicationController
         @last_record_for_atlas_copco = TaxInvoice.where("id < 100000")
 
         @temp_id = @last_record_for_atlas_copco.last.id + 1
-        puts @temp_id
+
         @tax_invoice.id = @temp_id
 
       end
