@@ -15,6 +15,7 @@
       <th><%= model_class.human_attribute_name(:product_name) %></th>
       <th><%= model_class.human_attribute_name(:invoice_type) %></th>
       <th><%= model_class.human_attribute_name(:po_quantity) %></th>
+      <th><%= model_class.human_attribute_name(:invoice_quantity) %></th>
       <th><%= model_class.human_attribute_name(:return_quantity) %></th>
       <th><%= model_class.human_attribute_name(:rejected_quantity) %></th>
       <th><%= model_class.human_attribute_name(:final_quantity) %></th>
@@ -40,6 +41,7 @@
         <td><%= tax_invoice.product_name %></td>
         <td><%= tax_invoice.invoice_type %></td>
         <td><%= tax_invoice.po_quantity %></td>
+        <td><%= tax_invoice.invoice_quantity %></td>
         <td><%= tax_invoice.return_quantity %></td>
         <td><%= tax_invoice.rejected_quantity %></td>
         <td><%= tax_invoice.final_quantity %></td>

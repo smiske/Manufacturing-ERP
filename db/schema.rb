@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(:version => 20130304102052) do
     t.float    "unpaid_payment"
     t.integer  "rejected_quantity"
     t.float    "tds"
+    t.integer  "invoice_quantity"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end

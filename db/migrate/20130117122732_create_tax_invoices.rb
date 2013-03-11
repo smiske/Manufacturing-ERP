@@ -28,6 +28,7 @@ class CreateTaxInvoices < ActiveRecord::Migration
       t.float :unpaid_payment
       t.integer :rejected_quantity
       t.float :tds
+      t.integer :invoice_quantity
 
       t.timestamps
     end
