@@ -162,6 +162,11 @@ class TaxInvoicesController < ApplicationController
 
 
 
+        @orders.first.balance_quantity =  @orders.first.balance_quantity.to_i - @tax_invoice.invoice_quantity.to_i
+         @orders.first.save
+
+
+
 
     respond_to do |format|
       if @tax_invoice.save
@@ -216,9 +221,14 @@ class TaxInvoicesController < ApplicationController
       @tax_invoice.total_payment = @tax_invoice.amount - @tax_invoice.tds
       @tax_invoice.unpaid_payment = @tax_invoice.total_payment - params[:tax_invoice][:paid_payment].to_f
     end
-    puts "tax_invoice_id = #{@tax_invoice.id}"
+
+     puts "tax_invoice_id = #{@tax_invoice.id}"
     puts @tax_invoice.return_quantity
     @tax_invoice.update_attributes(params[:tax_invoice])
+
+    @orders.first.balance_quantity =  @orders.first.balance_quantity.to_i - @tax_invoice.invoice_quantity.to_i
+    @orders.first.save
+
     respond_to do |format|
 
       if @tax_invoice.save

@@ -9,6 +9,7 @@ class CreateOrders < ActiveRecord::Migration
       t.float :tax
       t.string :product_number
       t.string :product_type
+      t.integer :balance_quantity
 
       t.timestamps
     end

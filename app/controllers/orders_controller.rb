@@ -58,6 +58,9 @@ class OrdersController < ApplicationController
 
     @product = Product.all
 
+    @order.balance_quantity = @order.po_quantity
+
+
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }

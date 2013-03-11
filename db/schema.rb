@@ -52,8 +52,9 @@ ActiveRecord::Schema.define(:version => 20130304102052) do
     t.float    "tax"
     t.string   "product_number"
     t.string   "product_type"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "balance_quantity"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "product_transactions", :force => true do |t|
