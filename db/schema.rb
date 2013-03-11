@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20130304102052) do
     t.integer  "bank_account_id"
     t.string   "trans_type"
     t.float    "amount"
+    t.string   "person_name"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -106,8 +107,10 @@ ActiveRecord::Schema.define(:version => 20130304102052) do
     t.integer  "company_id"
     t.float    "paid_payment"
     t.float    "unpaid_payment"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "rejected_quantity"
+    t.float    "tds"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "transactions", :force => true do |t|

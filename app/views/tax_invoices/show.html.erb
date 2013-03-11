@@ -22,12 +22,16 @@
   <dd><%= @tax_invoice.quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:return_quantity) %>:</strong></dt>
   <dd><%= @tax_invoice.return_quantity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rejected_quantity) %>:</strong></dt>
+  <dd><%= @tax_invoice.rejected_quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:final_quantity) %>:</strong></dt>
   <dd><%= @tax_invoice.final_quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:rate) %>:</strong></dt>
   <dd><%= @tax_invoice.rate %></dd>
   <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
   <dd><%= @tax_invoice.amount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tds) %>:</strong></dt>
+  <dd><%= @tax_invoice.tds.round(2) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:excise) %>:</strong></dt>
   <dd><%= @tax_invoice.excise.round(2) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:ed_cess) %>:</strong></dt>

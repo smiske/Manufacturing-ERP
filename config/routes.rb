@@ -94,5 +94,5 @@ ManufacturingErp::Application.routes.draw do
   match '/tax_invoice/new/:id3/:id4' => 'tax_invoice#new'
 
 
-  root :to => 'orders#index'
+  root :to => 'products#index'
 end

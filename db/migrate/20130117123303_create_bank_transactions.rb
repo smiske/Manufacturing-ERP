@@ -6,6 +6,7 @@ class CreateBankTransactions < ActiveRecord::Migration
       t.integer :bank_account_id
       t.string :trans_type
       t.float :amount
+      t.string :person_name
 
 
       t.timestamps

@@ -17,14 +17,13 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', :platforms => :ruby
-gem 'less-rails'
+
 
 gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails', '~> 2.1.4'
 
-gem 'twitter-bootstrap-rails', '~> 2.2.0'
 gem 'devise', '~> 2.2.2'
 
 gem 'ransack', :git => "git://github.com/ernie/ransack.git" # Track git repo
@@ -56,3 +55,4 @@ gem 'will_paginate'
 
 # To use debugger
 # gem 'debugger'
+

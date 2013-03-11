@@ -105,9 +105,11 @@ class TaxInvoicesController < ApplicationController
      @tax_invoice.po_date =  @order.first.date
      @tax_invoice.product_number =  @order.first.product_number
 
-      @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity.to_i
+      @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity.to_i - @tax_invoice.rejected_quantity.to_i
 
       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
+
+      @tax_invoice.tds = 0.0
 
       @tax_invoice.excise = @tax_invoice.amount * 0.12
 
@@ -135,9 +137,11 @@ class TaxInvoicesController < ApplicationController
        @tax_invoice.po_date =  @order.first.date
        @tax_invoice.product_number =  @order.first.product_number
 
-       @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity.to_i
+       @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity.to_i - @tax_invoice.rejected_quantity.to_i
 
        @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
+
+       @tax_invoice.tds = @tax_invoice.amount * 0.02
 
        @tax_invoice.excise = 0.0
 
@@ -145,11 +149,11 @@ class TaxInvoicesController < ApplicationController
 
        @tax_invoice.edu_cess = 0.0
 
-       @tax_invoice.value_added_tax = @tax_invoice.amount * 0.125
+       @tax_invoice.value_added_tax = 0.0
 
-       @tax_invoice.total_tax = @tax_invoice.excise + @tax_invoice.ed_cess + @tax_invoice.edu_cess + @tax_invoice.value_added_tax
+       @tax_invoice.total_tax = 0.0
 
-       @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
+       @tax_invoice.total_payment = @tax_invoice.amount - @tax_invoice.tds
 
 
        @tax_invoice.unpaid_payment = @tax_invoice.total_payment - @tax_invoice.paid_payment.to_f
@@ -185,8 +189,9 @@ class TaxInvoicesController < ApplicationController
       @tax_invoice.quantity =  @order.first.quantity
       @tax_invoice.po_date =  @order.first.date
       @tax_invoice.product_number =  @order.first.product_number
-      @tax_invoice.final_quantity = @tax_invoice.quantity - params[:tax_invoice][:return_quantity].to_i
+      @tax_invoice.final_quantity = @tax_invoice.quantity - params[:tax_invoice][:return_quantity].to_i - params[:tax_invoice][:rejected_quantity].to_i
       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
+      @tax_invoice.tds = 0.0
       @tax_invoice.excise = @tax_invoice.amount * 0.12
       @tax_invoice.ed_cess = @tax_invoice.excise * 0.02
       @tax_invoice.edu_cess = @tax_invoice.excise * 0.01
@@ -200,14 +205,15 @@ class TaxInvoicesController < ApplicationController
       @tax_invoice.quantity =  @order.first.quantity
       @tax_invoice.po_date =  @order.first.date
       @tax_invoice.product_number =  @order.first.product_number
-      @tax_invoice.final_quantity = @tax_invoice.quantity - params[:tax_invoice][:return_quantity].to_i
+      @tax_invoice.final_quantity = @tax_invoice.quantity - params[:tax_invoice][:return_quantity].to_i - params[:tax_invoice][:rejected_quantity].to_i
       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
+      @tax_invoice.tds = @tax_invoice.amount * 0.02
       @tax_invoice.excise = 0.0
       @tax_invoice.ed_cess = 0.0
       @tax_invoice.edu_cess = 0.0
-      @tax_invoice.value_added_tax = @tax_invoice.amount * 0.125
-      @tax_invoice.total_tax = @tax_invoice.excise + @tax_invoice.ed_cess + @tax_invoice.edu_cess + @tax_invoice.value_added_tax
-      @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
+      @tax_invoice.value_added_tax = 0.0
+      @tax_invoice.total_tax = 0.0
+      @tax_invoice.total_payment = @tax_invoice.amount - @tax_invoice.tds
       @tax_invoice.unpaid_payment = @tax_invoice.total_payment - params[:tax_invoice][:paid_payment].to_f
     end
     puts "tax_invoice_id = #{@tax_invoice.id}"
