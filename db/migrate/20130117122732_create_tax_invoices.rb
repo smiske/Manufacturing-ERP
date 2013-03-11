@@ -8,7 +8,7 @@ class CreateTaxInvoices < ActiveRecord::Migration
       t.string :product_name
       t.string :invoice_type
       t.string :product_number
-      t.integer :quantity
+      t.integer :po_quantity
       t.float :rate
 
       t.float :amount

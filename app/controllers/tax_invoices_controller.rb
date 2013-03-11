@@ -101,11 +101,11 @@ class TaxInvoicesController < ApplicationController
 
      @tax_invoice.rate = @order.first.rate
      @tax_invoice.product_name =  @order.first.product_name
-     @tax_invoice.quantity =  @order.first.quantity
+     @tax_invoice.po_quantity =  @order.first.po_quantity
      @tax_invoice.po_date =  @order.first.date
      @tax_invoice.product_number =  @order.first.product_number
 
-      @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity.to_i - @tax_invoice.rejected_quantity.to_i
+      @tax_invoice.final_quantity = @tax_invoice.po_quantity - @tax_invoice.return_quantity.to_i - @tax_invoice.rejected_quantity.to_i
 
       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
 
@@ -133,11 +133,11 @@ class TaxInvoicesController < ApplicationController
 
        @tax_invoice.rate = @order.first.rate
        @tax_invoice.product_name =  @order.first.product_name
-       @tax_invoice.quantity =  @order.first.quantity
+       @tax_invoice.po_quantity =  @order.first.po_quantity
        @tax_invoice.po_date =  @order.first.date
        @tax_invoice.product_number =  @order.first.product_number
 
-       @tax_invoice.final_quantity = @tax_invoice.quantity - @tax_invoice.return_quantity.to_i - @tax_invoice.rejected_quantity.to_i
+       @tax_invoice.final_quantity = @tax_invoice.po_quantity - @tax_invoice.return_quantity.to_i - @tax_invoice.rejected_quantity.to_i
 
        @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
 
@@ -186,10 +186,10 @@ class TaxInvoicesController < ApplicationController
     if params[:tax_invoice][:invoice_type] == "With Material"
       @tax_invoice.rate = @order.first.rate
       @tax_invoice.product_name =  @order.first.product_name
-      @tax_invoice.quantity =  @order.first.quantity
+      @tax_invoice.po_quantity =  @order.first.po_quantity
       @tax_invoice.po_date =  @order.first.date
       @tax_invoice.product_number =  @order.first.product_number
-      @tax_invoice.final_quantity = @tax_invoice.quantity - params[:tax_invoice][:return_quantity].to_i - params[:tax_invoice][:rejected_quantity].to_i
+      @tax_invoice.final_quantity = @tax_invoice.po_quantity - params[:tax_invoice][:return_quantity].to_i - params[:tax_invoice][:rejected_quantity].to_i
       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
       @tax_invoice.tds = 0.0
       @tax_invoice.excise = @tax_invoice.amount * 0.12
@@ -202,10 +202,10 @@ class TaxInvoicesController < ApplicationController
     elsif params[:tax_invoice][:invoice_type] == "Labour Charges Only"
       @tax_invoice.rate = @order.first.rate
       @tax_invoice.product_name =  @order.first.product_name
-      @tax_invoice.quantity =  @order.first.quantity
+      @tax_invoice.po_quantity =  @order.first.po_quantity
       @tax_invoice.po_date =  @order.first.date
       @tax_invoice.product_number =  @order.first.product_number
-      @tax_invoice.final_quantity = @tax_invoice.quantity - params[:tax_invoice][:return_quantity].to_i - params[:tax_invoice][:rejected_quantity].to_i
+      @tax_invoice.final_quantity = @tax_invoice.po_quantity - params[:tax_invoice][:return_quantity].to_i - params[:tax_invoice][:rejected_quantity].to_i
       @tax_invoice.amount = @tax_invoice.rate * @tax_invoice.final_quantity
       @tax_invoice.tds = @tax_invoice.amount * 0.02
       @tax_invoice.excise = 0.0

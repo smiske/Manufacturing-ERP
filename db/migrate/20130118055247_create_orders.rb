@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :PO_number
       t.date :date
       t.string :product_name
-      t.integer :quantity
+      t.integer :po_quantity
       t.float :rate
       t.float :tax
       t.string :product_number
