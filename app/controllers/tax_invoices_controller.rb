@@ -226,9 +226,6 @@ class TaxInvoicesController < ApplicationController
     puts @tax_invoice.return_quantity
     @tax_invoice.update_attributes(params[:tax_invoice])
 
-    @orders.first.balance_quantity =  @orders.first.balance_quantity.to_i - @tax_invoice.invoice_quantity.to_i
-    @orders.first.save
-
     respond_to do |format|
 
       if @tax_invoice.save
