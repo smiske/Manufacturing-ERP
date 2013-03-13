@@ -1,20 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = EmployPayment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Employ name:</b>
-  <%= @employ_payment.employ_name %>
-</p>
-
-<p>
-  <b>Micor code:</b>
-  <%= @employ_payment.micor_code %>
-</p>
-
-<p>
-  <b>Amount:</b>
-  <%= @employ_payment.amount %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:employ_name) %>:</strong></dt>
+  <dd><%= @employ_payment.employ_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:bank_name) %>:</strong></dt>
+  <dd><%= @employ_payment.bank_account_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:micor_code) %>:</strong></dt>
+  <dd><%= @employ_payment.micor_code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
+  <dd><%= @employ_payment.amount %></dd>
+ </dl>
 
 
-<%= link_to 'Edit', edit_employ_payment_path(@employ_payment) %> |
-<%= link_to 'Back', employ_payments_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              employ_payments_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_employ_payment_path(@employ_payment), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              employ_payment_path(@employ_payment),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

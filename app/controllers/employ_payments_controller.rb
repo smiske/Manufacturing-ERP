@@ -25,6 +25,8 @@ class EmployPaymentsController < ApplicationController
   # GET /employ_payments/new.json
   def new
     @employ_payment = EmployPayment.new
+    @employs = Employ.all
+    @bank_accounts = BankAccount.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +37,20 @@ class EmployPaymentsController < ApplicationController
   # GET /employ_payments/1/edit
   def edit
     @employ_payment = EmployPayment.find(params[:id])
+    @employs = Employ.all
+    @bank_accounts = BankAccount.all
   end
 
   # POST /employ_payments
   # POST /employ_payments.json
   def create
     @employ_payment = EmployPayment.new(params[:employ_payment])
+    @employs = Employ.all
+    @bank_accounts = BankAccount.all
+
+    @bank_accounts = BankAccount.where(:id => params[:employ_payment][:bank_account_id])
+    @bank_accounts.first.balance = @bank_accounts.first.balance - params[:employ_payment][:amount].to_f
+    @bank_accounts.first.save
 
     respond_to do |format|
       if @employ_payment.save
@@ -57,6 +67,8 @@ class EmployPaymentsController < ApplicationController
   # PUT /employ_payments/1.json
   def update
     @employ_payment = EmployPayment.find(params[:id])
+    @employs = Employ.all
+    @bank_accounts = BankAccount.all
 
     respond_to do |format|
       if @employ_payment.update_attributes(params[:employ_payment])

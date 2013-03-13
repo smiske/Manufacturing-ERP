@@ -1,29 +1,41 @@
-<%= form_for(@employ_payment) do |f| %>
-  <% if @employ_payment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@employ_payment.errors.count, "error") %> prohibited this employ_payment from being saved:</h2>
+<%= form_for @employ_payment, :html => { :class => 'form-horizontal' } do |f| %>
 
-      <ul>
-      <% @employ_payment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+
+
+    <div class="control-group">
+    <%= f.label :employ_name, :class => 'control-label' %>
+      <div class="controls">
+    <%= f.select :employ_name, options_for_select(@employs.map{|d| [d.name, d.name] }),{:include_blank => true}, :class => 'number_field' %>
+      </div>
+  </div>
+
+    <div class="control-group">
+      <%= f.label :bank_account_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :bank_account_id, options_for_select(@bank_accounts.map{|d| ["#{d.bank_name} - #{d.account_number}", d.id] }),{ :include_blank => true }, :class => 'number_field' %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :employ_name %><br />
-    <%= f.text_field :employ_name %>
+
+    <div class="control-group">
+    <%= f.label :micor_code, :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :micor_code, :class => 'number_field' %>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :micor_code %><br />
-    <%= f.number_field :micor_code %>
+
+
+    <div class="control-group">
+    <%= f.label :amount, :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :amount, :class => 'number_field' %>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :amount %><br />
-    <%= f.text_field :amount %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary'  %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  employ_payments_path, :class => 'btn' %>
+    </div>
 <% end %>
+

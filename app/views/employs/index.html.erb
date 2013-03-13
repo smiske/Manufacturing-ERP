@@ -1,27 +1,33 @@
-<h1>Listing employs</h1>
+<%- model_class = Employ -%>
 
-<table>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
   <tr>
-    <th>Name</th>
-    <th>Add</th>
-    <th>Mobile no</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><%= model_class.human_attribute_name(:id) %></th>
+    <th><%= model_class.human_attribute_name(:name) %></th>
+    <th><%= model_class.human_attribute_name(:add) %></th>
+    <th><%= model_class.human_attribute_name(:mobile_no) %></th>
+
   </tr>
+  </thead>
+  <tbody>
 
 <% @employs.each do |employ| %>
   <tr>
+    <td><%= link_to employ.id, employ_path(employ) %></td>
     <td><%= employ.name %></td>
     <td><%= employ.add %></td>
     <td><%= employ.mobile_no %></td>
-    <td><%= link_to 'Show', employ %></td>
-    <td><%= link_to 'Edit', edit_employ_path(employ) %></td>
-    <td><%= link_to 'Destroy', employ, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
   </tr>
 <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Employ', new_employ_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_employ_path,
+            :class => 'btn btn-primary' %>

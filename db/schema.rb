@@ -47,8 +47,9 @@ ActiveRecord::Schema.define(:version => 20130311113318) do
     t.string   "employ_name"
     t.integer  "micor_code"
     t.float    "amount"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "bank_account_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "employs", :force => true do |t|
