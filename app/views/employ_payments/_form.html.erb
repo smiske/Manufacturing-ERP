@@ -1,0 +1,29 @@
+<%= form_for(@employ_payment) do |f| %>
+  <% if @employ_payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employ_payment.errors.count, "error") %> prohibited this employ_payment from being saved:</h2>
+
+      <ul>
+      <% @employ_payment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :employ_name %><br />
+    <%= f.text_field :employ_name %>
+  </div>
+  <div class="field">
+    <%= f.label :micor_code %><br />
+    <%= f.number_field :micor_code %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

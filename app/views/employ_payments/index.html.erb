@@ -1,0 +1,27 @@
+<h1>Listing employ_payments</h1>
+
+<table>
+  <tr>
+    <th>Employ name</th>
+    <th>Micor code</th>
+    <th>Amount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @employ_payments.each do |employ_payment| %>
+  <tr>
+    <td><%= employ_payment.employ_name %></td>
+    <td><%= employ_payment.micor_code %></td>
+    <td><%= employ_payment.amount %></td>
+    <td><%= link_to 'Show', employ_payment %></td>
+    <td><%= link_to 'Edit', edit_employ_payment_path(employ_payment) %></td>
+    <td><%= link_to 'Destroy', employ_payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Employ payment', new_employ_payment_path %>

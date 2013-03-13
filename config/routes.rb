@@ -1,4 +1,10 @@
 ManufacturingErp::Application.routes.draw do
+  resources :employ_payments
+
+
+  resources :employs
+
+
   resources :companies
 
 

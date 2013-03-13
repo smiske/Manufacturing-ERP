@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Employ name:</b>
+  <%= @employ_payment.employ_name %>
+</p>
+
+<p>
+  <b>Micor code:</b>
+  <%= @employ_payment.micor_code %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @employ_payment.amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_employ_payment_path(@employ_payment) %> |
+<%= link_to 'Back', employ_payments_path %>
