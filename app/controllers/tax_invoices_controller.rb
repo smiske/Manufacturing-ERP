@@ -81,14 +81,14 @@ class TaxInvoicesController < ApplicationController
     unless TaxInvoice.last.nil?
       if params[:tax_invoice][:company_id].to_i > 1
         @temp_id = TaxInvoice.last.id
-        if @temp_id < 100000
-          @temp_id = 100000
+        if @temp_id < 10000
+          @temp_id = 10000
         else
           @temp_id = @temp_id +1
         end
         @tax_invoice.id = @temp_id
       else
-        @last_record_for_atlas_copco = TaxInvoice.where("id < 100000")
+        @last_record_for_atlas_copco = TaxInvoice.where("id < 10000")
 
         @temp_id = @last_record_for_atlas_copco.last.id + 1
 
