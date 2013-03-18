@@ -39,6 +39,8 @@ gem 'quiet_assets'
 
 gem 'will_paginate'
 
+gem 'numbers_and_words'
+
 
 
 # To use ActiveModel has_secure_password

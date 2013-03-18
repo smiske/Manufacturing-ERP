@@ -16,16 +16,30 @@ group :assets do
   
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+
+gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails', '~> 2.1.4'
-gem 'coffee-script-source', '~> 1.4.0'
-gem 'coffee-script', '~> 2.2.0'
-gem 'twitter-bootstrap-rails', '~> 2.2.0'
+
 gem 'devise', '~> 2.2.2'
+
+gem 'ransack', :git => "git://github.com/ernie/ransack.git" # Track git repo
+
+gem 'pdfkit', '~> 0.5.2'
+
+gem 'wkhtmltopdf-binary'
+
+gem 'wkhtmltopdf'
+gem 'thin'
+
+gem 'quiet_assets'
+
+gem 'will_paginate'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -41,3 +55,4 @@ gem 'devise', '~> 2.2.2'
 
 # To use debugger
 # gem 'debugger'
+

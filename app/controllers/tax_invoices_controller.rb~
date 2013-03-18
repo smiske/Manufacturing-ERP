@@ -31,7 +31,7 @@ class TaxInvoicesController < ApplicationController
 
   def generate_pdf
     @tax_invoice = TaxInvoice.find(session[:tax_invoice_id])
-	puts @text = @tax_invoice.total_payment.to_i.to_words
+
 
     #session[:tax_invoice_id] = nil
   end
