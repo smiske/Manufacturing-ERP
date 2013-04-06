@@ -56,9 +56,12 @@ class OrdersController < ApplicationController
 
     @order.product_type = @product.first.product_type
 
+    @order.vender_code = @product.first.vender_code
+
     @product = Product.all
 
     @order.balance_quantity = @order.po_quantity
+
 
 
     respond_to do |format|

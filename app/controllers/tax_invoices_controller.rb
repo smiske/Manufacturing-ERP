@@ -98,7 +98,7 @@ class TaxInvoicesController < ApplicationController
     end
 
    if params[:tax_invoice][:invoice_type] == "With Material"
-
+     @tax_invoice.vender_code = @order.first.vender_code
      @tax_invoice.rate = @order.first.rate
      @tax_invoice.product_name =  @order.first.product_name
      @tax_invoice.po_quantity =  @order.first.po_quantity
@@ -130,7 +130,7 @@ class TaxInvoicesController < ApplicationController
 
 
     elsif params[:tax_invoice][:invoice_type] == "Labour Charges Only"
-
+      @tax_invoice.vender_code = @order.first.vender_code
        @tax_invoice.rate = @order.first.rate
        @tax_invoice.product_name =  @order.first.product_name
        @tax_invoice.po_quantity =  @order.first.po_quantity
@@ -189,6 +189,7 @@ class TaxInvoicesController < ApplicationController
     @orders = Order.all
 
     if params[:tax_invoice][:invoice_type] == "With Material"
+      @tax_invoice.vender_code = @order.first.vender_code
       @tax_invoice.rate = @order.first.rate
       @tax_invoice.product_name =  @order.first.product_name
       @tax_invoice.po_quantity =  @order.first.po_quantity
@@ -205,6 +206,7 @@ class TaxInvoicesController < ApplicationController
       @tax_invoice.total_payment = @tax_invoice.amount + @tax_invoice.total_tax
       @tax_invoice.unpaid_payment = @tax_invoice.total_payment - params[:tax_invoice][:paid_payment].to_f
     elsif params[:tax_invoice][:invoice_type] == "Labour Charges Only"
+      @tax_invoice.vender_code = @order.first.vender_code
       @tax_invoice.rate = @order.first.rate
       @tax_invoice.product_name =  @order.first.product_name
       @tax_invoice.po_quantity =  @order.first.po_quantity

@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20130311113318) do
     t.string   "product_number"
     t.string   "product_type"
     t.integer  "balance_quantity"
+    t.integer  "vender_code"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -128,6 +129,7 @@ ActiveRecord::Schema.define(:version => 20130311113318) do
     t.integer  "rejected_quantity"
     t.float    "tds"
     t.integer  "invoice_quantity"
+    t.integer  "vender_code"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end

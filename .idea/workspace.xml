@@ -25,25 +25,7 @@
       <file leaf-file-name="orders_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/orders_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="78" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.7016129">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tax_invoices_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/tax_invoices_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="69" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generate_pdf.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/tax_invoices/generate_pdf.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="54" selection-start="2121" selection-end="2121" vertical-scroll-proportion="-18.125">
+            <state line="58" column="47" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.41129032">
               <folding />
             </state>
           </provider>
@@ -59,29 +41,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/employs/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/employs/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/employs/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/employ.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/bank_account.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20130311113318_create_employ_payments.rb" />
         <option value="$PROJECT_DIR$/app/views/employ_payments/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/employ_payments/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/employ_payments/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/employ_payment.rb" />
         <option value="$PROJECT_DIR$/app/controllers/employ_payments_controller.rb" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20130117122227_create_products.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20130117122732_create_tax_invoices.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20130118055247_create_orders.rb" />
+        <option value="$PROJECT_DIR$/app/views/tax_invoices/generate_pdf.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/order.rb" />
+        <option value="$PROJECT_DIR$/app/models/tax_invoice.rb" />
+        <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tax_invoices_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/tax_invoices/generate_pdf.html.erb" />
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
-    <option name="width" value="1366" />
-    <option name="height" value="744" />
+    <option name="x" value="-1" />
+    <option name="y" value="-4" />
+    <option name="width" value="1368" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -109,22 +92,22 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="RailsProjectView">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="manufacturing_erp" />
               <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -171,6 +154,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manufacturing_erp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manufacturing_erp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -198,24 +199,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tax_invoices" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manufacturing_erp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manufacturing_erp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -535,14 +518,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36094224" sideWeight="0.9983871" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36778116" sideWeight="0.9983871" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -610,36 +593,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/bank_transactions/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="98" selection-start="769" selection-end="769" vertical-scroll-proportion="0.38593483" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/bank_accounts_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="38" selection-start="155" selection-end="188" vertical-scroll-proportion="0.12096774" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/employ_payment.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="70" selection-start="111" selection-end="111" vertical-scroll-proportion="0.024193548" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/employ_payments_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="88" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.7983871" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/bank_transactions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="34" selection-start="1543" selection-end="1677" vertical-scroll-proportion="0.12096774" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/login.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -652,56 +605,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.2741935">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.2741935" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/product_transactions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="85" selection-start="343" selection-end="343" vertical-scroll-proportion="0.17298187">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130117122732_create_tax_invoices.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="22" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130118055247_create_orders.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="22" selection-start="349" selection-end="349" vertical-scroll-proportion="0.30150753">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130117122227_create_products.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="21" selection-start="146" selection-end="146" vertical-scroll-proportion="0.09677419">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/tax_invoice.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="383" selection-start="421" selection-end="421" vertical-scroll-proportion="0.024711696">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/order.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="1" column="131" selection-start="164" selection-end="164" vertical-scroll-proportion="0.024711696">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="61" selection-start="83" selection-end="96" vertical-scroll-proportion="0.024193548">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/product_transactions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="16" column="46" selection-start="411" selection-end="411" vertical-scroll-proportion="0.38709676">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tax_invoices_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="69" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="0" selection-start="15367" selection-end="15367" vertical-scroll-proportion="0.40691927">
+        <state line="208" column="51" selection-start="6647" selection-end="6647" vertical-scroll-proportion="-0.5815486">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tax_invoices/generate_pdf.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="54" selection-start="2121" selection-end="2121" vertical-scroll-proportion="-18.125">
+        <state line="50" column="72" selection-start="2139" selection-end="2139" vertical-scroll-proportion="0.025728988">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tax_invoices/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8490566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tax_invoices/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/orders_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="78" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.7016129">
+        <state line="58" column="47" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.41129032">
           <folding />
         </state>
       </provider>

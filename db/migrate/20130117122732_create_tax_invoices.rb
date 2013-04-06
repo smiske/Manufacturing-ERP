@@ -29,6 +29,7 @@ class CreateTaxInvoices < ActiveRecord::Migration
       t.integer :rejected_quantity
       t.float :tds
       t.integer :invoice_quantity
+      t.integer :vender_code
 
       t.timestamps
     end

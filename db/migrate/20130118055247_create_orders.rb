@@ -10,6 +10,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :product_number
       t.string :product_type
       t.integer :balance_quantity
+      t.integer :vender_code
 
       t.timestamps
     end
