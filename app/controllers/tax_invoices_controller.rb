@@ -72,8 +72,8 @@ class TaxInvoicesController < ApplicationController
     @tax_invoice = TaxInvoice.new(params[:tax_invoice])
 
     @companies = Company.all
-
-    @order = Order.where(:PO_number => params[:tax_invoice][:PO_number])
+    puts "----------------------------->#{params[:tax_invoice][:PO_number]}"
+    puts @order = Order.where(:PO_number => params[:tax_invoice][:PO_number])
 
     @products = Product.all
     @orders = Order.all
@@ -162,8 +162,8 @@ class TaxInvoicesController < ApplicationController
 
 
 
-        @orders.first.balance_quantity =  @orders.first.balance_quantity.to_i - @tax_invoice.invoice_quantity.to_i
-         @orders.first.save
+        @order.first.balance_quantity =  @order.first.balance_quantity.to_i - @tax_invoice.invoice_quantity.to_i
+         @order.first.save
 
 
 
@@ -222,9 +222,20 @@ class TaxInvoicesController < ApplicationController
       @tax_invoice.unpaid_payment = @tax_invoice.total_payment - params[:tax_invoice][:paid_payment].to_f
     end
 
-     puts "tax_invoice_id = #{@tax_invoice.id}"
+    puts "tax_invoice_id = #{@tax_invoice.id}"
     puts @tax_invoice.return_quantity
     @tax_invoice.update_attributes(params[:tax_invoice])
+
+    @all_tax_invoices = TaxInvoice.where("PO_number = #{@order.first.PO_number}")
+    @total = 0
+    @all_tax_invoices.each do |t|
+      @total = @total + t.invoice_quantity
+      puts @total
+    end
+
+    @order.first.balance_quantity = @order.first.po_quantity - @total
+    @order.first.save
+
 
     respond_to do |format|
 

@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
 
-    @product = Product.where(:product_name => params[:order][:product_name])
+    @product = Product.where(:product_number => params[:order][:product_number])
 
     @order.rate = @product.first.rate
 
